@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Logotipo de NVPC">
+  <rect x="15" y="15" width="70" height="70" rx="18"
+        fill="#16212c"
+        transform="rotate(-6 50 50)" />
+  <path d="M23 90 L23 14 L38 14 L77 58 L77 10 L92 10 L92 86 L77 86 L38 42 L38 90 Z"
+        fill="#E5342E" />
+</svg>

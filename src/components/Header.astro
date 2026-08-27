@@ -11,9 +11,7 @@ const currentPath = Astro.url.pathname;
 <header class="sticky top-0 z-50 border-b border-border bg-paper shadow-[0_1px_0_var(--color-border)]">
   <div class="container-nvpc flex h-16 items-center justify-between gap-4 sm:h-20">
     <a href={withBase("/")} class="flex items-center gap-2.5 font-heading text-lg font-semibold text-ink">
-      <span class="flex h-9 w-9 items-center justify-center rounded-[3px] bg-brand text-sm font-semibold text-paper" aria-hidden="true">
-        NV
-      </span>
+      <img src={withBase("/logo-mark.svg")} alt="" width="36" height="36" class="h-9 w-9" />
       NVPC
     </a>
 
