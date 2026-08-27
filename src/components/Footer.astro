@@ -9,7 +9,10 @@ const year = new Date().getFullYear();
 <footer class="bg-brand-dark text-on-brand-dim">
   <div class="container-nvpc grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
     <div>
-      <p class="font-heading text-lg font-semibold text-on-brand">NVPC</p>
+      <p class="flex items-center gap-2.5 font-heading text-lg font-semibold text-on-brand">
+        <img src={withBase("/logo-mark.svg")} alt="" width="32" height="32" class="h-8 w-8" />
+        NVPC
+      </p>
       <p class="mt-1 text-sm text-on-brand-muted">Networking Virtual PC</p>
       <p class="mt-4 max-w-xs text-sm leading-relaxed">
         Soporte técnico y soluciones informáticas para empresas y profesionales en Sevilla, con servicio remoto para toda España.

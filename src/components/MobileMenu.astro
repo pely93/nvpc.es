@@ -26,7 +26,10 @@ import { withBase } from "@/config";
     aria-label="Menú de navegación"
   >
     <div class="container-nvpc flex h-16 items-center justify-between border-b border-border">
-      <span class="font-heading text-lg font-semibold text-ink">NVPC</span>
+      <span class="flex items-center gap-2 font-heading text-lg font-semibold text-ink">
+        <img src={withBase("/logo-mark.svg")} alt="" width="28" height="28" class="h-7 w-7" />
+        NVPC
+      </span>
       <button
         id="mobile-menu-close"
         type="button"

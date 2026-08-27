@@ -44,8 +44,15 @@ const jsonLd = {
   canonical="/"
   jsonLd={jsonLd}
 >
-  <section class="bg-surface">
-    <div class="container-nvpc grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
+  <section class="relative overflow-hidden bg-surface">
+    <img
+      src={withBase("/graphics/network-motif.svg")}
+      alt=""
+      width="420"
+      height="300"
+      class="pointer-events-none absolute -right-10 -top-10 hidden w-[420px] max-w-none opacity-70 lg:block"
+    />
+    <div class="container-nvpc relative grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
       <div>
         <h1 class="text-4xl leading-[1.1] text-ink sm:text-5xl">
           Soporte informático para empresas en Sevilla
@@ -64,7 +71,7 @@ const jsonLd = {
           O llama directamente al <a href={business.phoneHref} class="font-medium text-brand hover:underline">{business.phoneDisplay}</a>
         </p>
       </div>
-      <div class="border-t-2 border-brand bg-paper p-8">
+      <div class="relative border-t-2 border-brand bg-paper p-8">
         <p class="label-caps text-xs text-ink-faint">Horario de atención</p>
         <p class="mt-1 font-heading text-lg text-ink">{business.schedule}</p>
         <p class="mt-5 label-caps text-xs text-ink-faint">Zona de trabajo</p>
