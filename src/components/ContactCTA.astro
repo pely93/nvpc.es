@@ -1,0 +1,33 @@
+---
+import PrimaryButton from "@/components/PrimaryButton.astro";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+import { business } from "@/data/business";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = "Cuéntanos qué necesita tu empresa",
+  description = "Escríbenos, llama o envía un WhatsApp. Te respondemos en horario comercial y te proponemos la solución más adecuada.",
+} = Astro.props;
+---
+
+<section class="bg-brand py-[var(--space-section)] text-white">
+  <div class="container-nvpc flex flex-col items-start gap-6">
+    <div class="max-w-2xl">
+      <h2 class="text-2xl font-bold sm:text-3xl">{title}</h2>
+      <p class="mt-3 text-white/80">{description}</p>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <PrimaryButton href="/contacto/" variant="solid" size="lg" class="bg-accent hover:bg-accent/90">
+        Solicitar presupuesto
+      </PrimaryButton>
+      <PrimaryButton href={business.phoneHref} variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-brand">
+        Llamar: {business.phoneDisplay}
+      </PrimaryButton>
+      <WhatsAppButton />
+    </div>
+  </div>
+</section>

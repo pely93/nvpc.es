@@ -1,0 +1,59 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import ReviewCTA from "@/components/ReviewCTA.astro";
+import type { CollectionEntry } from "astro:content";
+
+type Props = { entry: CollectionEntry<"cases"> };
+
+const { entry } = Astro.props;
+const { title, service, location, clientType, problem, work, result, date, draft, consent } = entry.data;
+const canonical = `/casos-de-exito/${entry.slug}/`;
+---
+
+<BaseLayout
+  title={title}
+  description={`Caso de ${service} en ${location}: ${problem}`}
+  canonical={canonical}
+  noindex={draft}
+>
+  <Breadcrumbs items={[{ label: "Casos de éxito", href: "/casos-de-exito/" }, { label: title }]} />
+
+  <article class="container-nvpc py-[var(--space-section)]">
+    {draft && (
+      <p class="mb-6 w-fit rounded-md border border-accent bg-accent/10 px-4 py-2 text-sm font-semibold text-accent">
+        Borrador — contenido pendiente de confirmar. Consentimiento de publicación: {consent}.
+      </p>
+    )}
+
+    <header class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-wide text-brand">{service} · {location}</p>
+      <h1 class="mt-2 text-3xl font-bold text-ink sm:text-4xl">{title}</h1>
+      <p class="mt-2 text-sm text-ink-soft">
+        Tipo de cliente: {clientType} · {date.toLocaleDateString("es-ES", { year: "numeric", month: "long" })}
+      </p>
+    </header>
+
+    <div class="mt-10 grid max-w-3xl gap-8">
+      <section>
+        <h2 class="font-heading text-xl font-bold text-ink">Problema</h2>
+        <p class="mt-2 text-ink-soft">{problem}</p>
+      </section>
+      <section>
+        <h2 class="font-heading text-xl font-bold text-ink">Trabajo realizado</h2>
+        <p class="mt-2 text-ink-soft">{work}</p>
+      </section>
+      <section>
+        <h2 class="font-heading text-xl font-bold text-ink">Resultado</h2>
+        <p class="mt-2 text-ink-soft">{result}</p>
+      </section>
+      <div class="prose prose-slate max-w-none">
+        <slot />
+      </div>
+    </div>
+
+    <div class="mt-12 max-w-3xl">
+      <ReviewCTA />
+    </div>
+  </article>
+</BaseLayout>

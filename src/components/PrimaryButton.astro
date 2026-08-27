@@ -1,0 +1,26 @@
+---
+type Props = {
+  href: string;
+  variant?: "solid" | "outline" | "ghost";
+  size?: "md" | "lg";
+  class?: string;
+};
+
+const { href, variant = "solid", size = "md", class: className = "" } = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-colors min-h-[44px] focus-visible:outline-offset-2";
+const sizes = {
+  md: "px-5 py-2.5 text-sm",
+  lg: "px-6 py-3.5 text-base",
+};
+const variants = {
+  solid: "bg-brand text-white hover:bg-brand-dark",
+  outline: "border-2 border-brand text-brand hover:bg-brand hover:text-white",
+  ghost: "text-brand hover:underline",
+};
+---
+
+<a href={href} class={`${base} ${sizes[size]} ${variants[variant]} ${className}`}>
+  <slot />
+</a>

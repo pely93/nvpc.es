@@ -1,0 +1,46 @@
+---
+import { mainNav } from "@/data/navigation";
+import { business } from "@/data/business";
+import PrimaryButton from "@/components/PrimaryButton.astro";
+import MobileMenu from "@/components/MobileMenu.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-paper/95 backdrop-blur">
+  <div class="container-nvpc flex h-16 items-center justify-between gap-4 sm:h-20">
+    <a href="/" class="flex items-center gap-2 font-heading text-lg font-bold text-brand">
+      <span class="flex h-9 w-9 items-center justify-center rounded-md bg-brand text-sm font-bold text-white" aria-hidden="true">
+        NV
+      </span>
+      NVPC
+    </a>
+
+    <nav aria-label="Navegación principal" class="hidden lg:block">
+      <ul class="flex items-center gap-6 text-sm font-medium text-ink">
+        {
+          mainNav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={currentPath.startsWith(item.href) ? "page" : undefined}
+                class="hover:text-brand aria-[current=page]:text-brand"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <a href={business.phoneHref} class="text-sm font-semibold text-ink hover:text-brand">
+        {business.phoneDisplay}
+      </a>
+      <PrimaryButton href="/contacto/" size="md">Solicitar presupuesto</PrimaryButton>
+    </div>
+
+    <MobileMenu />
+  </div>
+</header>

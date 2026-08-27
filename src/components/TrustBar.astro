@@ -1,0 +1,18 @@
+---
+const items = [
+  "Soporte técnico",
+  "Mantenimiento informático",
+  "Redes y WiFi",
+  "Soluciones para empresas",
+];
+---
+
+<section class="border-y border-border bg-surface py-8" aria-label="Áreas de trabajo de NVPC">
+  <div class="container-nvpc grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
+    {
+      items.map((item) => (
+        <p class="text-sm font-semibold uppercase tracking-wide text-ink-soft">{item}</p>
+      ))
+    }
+  </div>
+</section>

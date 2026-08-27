@@ -1,0 +1,129 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import FAQ from "@/components/FAQ.astro";
+import ContactCTA from "@/components/ContactCTA.astro";
+import { siteUrl } from "@/config";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  entry: CollectionEntry<"services">;
+};
+
+const { entry } = Astro.props;
+const { title, description, problem, audience, includes, benefits, remoteWork, onSiteWork, faq, relatedServices } =
+  entry.data;
+
+const canonical = `/servicios/${entry.slug}/`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: title,
+    description,
+    provider: {
+      "@type": "LocalBusiness",
+      name: "NVPC · Networking Virtual PC",
+      telephone: "+34667200016",
+      url: siteUrl,
+    },
+    areaServed: "Sevilla y provincia; servicio remoto en toda España",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Servicios", item: `${siteUrl}/servicios/` },
+      { "@type": "ListItem", position: 3, name: title, item: `${siteUrl}${canonical}` },
+    ],
+  },
+  faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }
+    : null,
+].filter((entry) => entry !== null) as Record<string, unknown>[];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ label: "Servicios", href: "/servicios/" }, { label: title }]} />
+
+  <article class="container-nvpc py-[var(--space-section)]">
+    <header class="max-w-3xl">
+      <h1 class="text-3xl font-bold text-ink sm:text-4xl">{title}</h1>
+      <p class="mt-4 text-lg text-ink-soft">{problem}</p>
+    </header>
+
+    <div class="mt-10 grid gap-10 lg:grid-cols-3">
+      <div class="lg:col-span-2 prose prose-slate max-w-none prose-headings:font-heading prose-headings:text-ink">
+        <slot />
+
+        <h2>Para quién está pensado</h2>
+        <ul>
+          {audience.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2>Qué incluye</h2>
+        <ul>
+          {includes.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2>Beneficios</h2>
+        <ul>
+          {benefits.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2>Qué parte puede hacerse en remoto</h2>
+        <p>{remoteWork}</p>
+
+        <h2>Qué parte requiere visita</h2>
+        <p>{onSiteWork}</p>
+      </div>
+
+      <aside class="rounded-lg border border-border bg-surface p-6 h-fit">
+        <h2 class="font-heading text-lg font-bold text-ink">¿Hablamos?</h2>
+        <p class="mt-2 text-sm text-ink-soft">
+          Cuéntanos tu caso y te proponemos una solución concreta, sin compromisos.
+        </p>
+        <a
+          href="/contacto/"
+          class="mt-4 flex min-h-[44px] items-center justify-center rounded-md bg-brand px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark"
+        >
+          Solicitar presupuesto
+        </a>
+        {relatedServices.length > 0 && (
+          <>
+            <h3 class="mt-6 font-heading text-sm font-semibold uppercase tracking-wide text-ink-soft">
+              Servicios relacionados
+            </h3>
+            <ul class="mt-2 space-y-2 text-sm">
+              {relatedServices.map((slug) => (
+                <li>
+                  <a href={`/servicios/${slug}/`} class="text-brand hover:underline">
+                    {slug.replace(/-/g, " ")}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </aside>
+    </div>
+
+    {faq.length > 0 && (
+      <div class="mt-16 max-w-3xl">
+        <FAQ items={faq} />
+      </div>
+    )}
+  </article>
+
+  <ContactCTA />
+</BaseLayout>

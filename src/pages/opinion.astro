@@ -1,0 +1,62 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { business } from "@/data/business";
+---
+
+<BaseLayout
+  title="Gracias por confiar en NVPC"
+  description="Página de agradecimiento y enlace para dejar una reseña en Google sobre el servicio de NVPC."
+  canonical="/opinion/"
+>
+  <section class="container-nvpc py-[var(--space-section)] text-center">
+    <div class="mx-auto max-w-xl">
+      <h1 class="text-3xl font-bold text-ink sm:text-4xl">Gracias por confiar en NVPC</h1>
+      <p class="mt-4 text-lg text-ink-soft">
+        Si hemos trabajado contigo, tu opinión nos ayuda a que más empresas y profesionales nos encuentren. Puedes dejar una reseña honesta en Google, cuente lo que cuente.
+      </p>
+
+      <a
+        href={business.googleReviewUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-8 inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand px-6 py-3.5 text-base font-semibold text-white hover:bg-brand-dark"
+      >
+        Dejar una reseña en Google
+      </a>
+
+      <div class="mt-10 flex flex-col items-center gap-2">
+        <img
+          src={business.googleReviewQrUrl !== "[GOOGLE_REVIEW_QR_PENDIENTE]" ? business.googleReviewQrUrl : "/images/qr-placeholder.svg"}
+          alt="Código QR para dejar una reseña de NVPC en Google"
+          width="180"
+          height="180"
+          loading="lazy"
+        />
+        <p class="text-xs text-ink-soft">
+          Código QR pendiente de generar con el enlace definitivo de Google Business Profile.
+        </p>
+      </div>
+
+      <div class="mt-10 rounded-lg border border-border bg-surface p-6 text-left">
+        <h2 class="font-heading text-lg font-bold text-ink">¿Prefieres llamar o escribir?</h2>
+        <ul class="mt-3 space-y-2 text-sm text-ink-soft">
+          <li>Teléfono: <a href={business.phoneHref} class="font-semibold text-brand hover:underline">{business.phoneDisplay}</a></li>
+          <li>WhatsApp: <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand hover:underline">Enviar mensaje</a></li>
+          <li>Email: <a href={`mailto:${business.email}`} class="font-semibold text-brand hover:underline">{business.email}</a></li>
+        </ul>
+      </div>
+
+      <div class="mt-10 rounded-lg border border-dashed border-border p-6 text-left">
+        <h2 class="font-heading text-lg font-bold text-ink">Textos listos para usar</h2>
+        <p class="mt-3 text-sm font-semibold text-ink">Para tarjeta física:</p>
+        <p class="mt-1 text-sm text-ink-soft">
+          "Escanea este código o visita nvpc.es/opinion/ para dejarnos tu opinión sobre nuestro servicio."
+        </p>
+        <p class="mt-4 text-sm font-semibold text-ink">Para WhatsApp o email:</p>
+        <p class="mt-1 text-sm text-ink-soft">
+          "Gracias por confiar en NVPC. Si quieres, puedes dejarnos una reseña honesta en Google aquí: nvpc.es/opinion/"
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

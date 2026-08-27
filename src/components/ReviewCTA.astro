@@ -1,0 +1,23 @@
+---
+import { business } from "@/data/business";
+
+type Props = { compact?: boolean };
+const { compact = false } = Astro.props;
+---
+
+<div class={`rounded-lg border border-border bg-surface ${compact ? "p-4" : "p-6 sm:p-8"}`}>
+  <p class={`font-heading font-bold text-ink ${compact ? "text-base" : "text-xl"}`}>
+    ¿Ya trabajamos contigo? Cuéntaselo a otros.
+  </p>
+  <p class="mt-2 text-sm text-ink-soft">
+    Si NVPC te ha ayudado, deja una reseña honesta en Google. Nos ayuda a que más empresas nos encuentren.
+  </p>
+  <a
+    href={business.googleReviewUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="mt-4 inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark"
+  >
+    Dejar una reseña en Google
+  </a>
+</div>

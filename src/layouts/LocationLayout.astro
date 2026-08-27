@@ -1,0 +1,100 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import FAQ from "@/components/FAQ.astro";
+import ContactCTA from "@/components/ContactCTA.astro";
+import { siteUrl } from "@/config";
+import type { CollectionEntry } from "astro:content";
+
+type Props = { entry: CollectionEntry<"locations"> };
+
+const { entry } = Astro.props;
+const { title, description, intro, commonProblems, includes, coverageAreas, faq, relatedService } = entry.data;
+const canonical = `/sevilla/${entry.slug}/`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: title,
+    description,
+    areaServed: "Sevilla y provincia",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "NVPC · Networking Virtual PC",
+      telephone: "+34667200016",
+      url: siteUrl,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Sevilla", item: `${siteUrl}/sevilla/` },
+      { "@type": "ListItem", position: 3, name: title, item: `${siteUrl}${canonical}` },
+    ],
+  },
+  faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }
+    : null,
+].filter((entry) => entry !== null) as Record<string, unknown>[];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ label: "Sevilla", href: "/sevilla/" }, { label: title }]} />
+
+  <article class="container-nvpc py-[var(--space-section)]">
+    <header class="max-w-3xl">
+      <h1 class="text-3xl font-bold text-ink sm:text-4xl">{title}</h1>
+      <p class="mt-4 text-lg text-ink-soft">{intro}</p>
+    </header>
+
+    <div class="mt-10 max-w-3xl prose prose-slate prose-headings:font-heading prose-headings:text-ink">
+      <slot />
+
+      <h2>Problemas habituales</h2>
+      <ul>
+        {commonProblems.map((item) => <li>{item}</li>)}
+      </ul>
+
+      <h2>Qué incluye el servicio</h2>
+      <ul>
+        {includes.map((item) => <li>{item}</li>)}
+      </ul>
+
+      {coverageAreas && coverageAreas.length > 0 && (
+        <>
+          <h2>Zonas atendidas</h2>
+          <ul>
+            {coverageAreas.map((item) => <li>{item}</li>)}
+          </ul>
+        </>
+      )}
+
+      <p>
+        Este servicio se combina con nuestras <a href="/tarifas/">tarifas planas de mantenimiento</a> y con la
+        página general de <a href={`/servicios/${relatedService}/`}>{relatedService.replace(/-/g, " ")}</a>.
+      </p>
+    </div>
+
+    {faq.length > 0 && (
+      <div class="mt-16 max-w-3xl">
+        <FAQ items={faq} />
+      </div>
+    )}
+  </article>
+
+  <ContactCTA
+    title="¿Necesitas este servicio en Sevilla?"
+    description="Cuéntanos tu caso y te decimos qué parte se resuelve en remoto y qué parte requiere una visita."
+  />
+</BaseLayout>

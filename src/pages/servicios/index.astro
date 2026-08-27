@@ -1,0 +1,58 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import ContactCTA from "@/components/ContactCTA.astro";
+import { getCollection } from "astro:content";
+
+const services = await getCollection("services");
+const byCategory = {
+  "soporte-mantenimiento": { title: "Soporte y mantenimiento", items: [] as typeof services },
+  "redes-infraestructura": { title: "Redes e infraestructura", items: [] as typeof services },
+  "seguridad-continuidad": { title: "Seguridad y continuidad", items: [] as typeof services },
+  "presencia-digital": { title: "Presencia digital", items: [] as typeof services },
+};
+
+for (const entry of services) {
+  byCategory[entry.data.category].items.push(entry);
+}
+for (const cat of Object.values(byCategory)) {
+  cat.items.sort((a, b) => a.data.order - b.data.order);
+}
+---
+
+<BaseLayout
+  title="Servicios informáticos para empresas"
+  description="Mantenimiento, redes, seguridad y presencia digital para empresas y profesionales. Servicios organizados por categoría, con soporte remoto y presencial."
+  canonical="/servicios/"
+>
+  <Breadcrumbs items={[{ label: "Servicios" }]} />
+
+  <section class="container-nvpc py-[var(--space-section)]">
+    <h1 class="max-w-2xl text-3xl font-bold text-ink sm:text-4xl">Servicios informáticos para empresas</h1>
+    <p class="mt-4 max-w-2xl text-lg text-ink-soft">
+      Organizamos nuestros servicios en cuatro categorías claras, con soporte remoto y presencial según lo que necesite cada caso.
+    </p>
+
+    {Object.values(byCategory).map((cat) => (
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-ink">{cat.title}</h2>
+        <ul class="mt-5 grid gap-4 sm:grid-cols-2">
+          {cat.items.map((item) => (
+            <li class="rounded-lg border border-border bg-paper p-5">
+              <a href={`/servicios/${item.slug}/`} class="font-heading text-lg font-bold text-ink hover:text-brand">
+                {item.data.title}
+              </a>
+              <p class="mt-2 text-sm text-ink-soft">{item.data.description}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    <p class="mt-12 max-w-2xl text-sm text-ink-soft">
+      Estamos preparando servicios digitales adicionales (automatización, integraciones, mantenimiento WordPress) que se publicarán cuando estén validados y definidos.
+    </p>
+  </section>
+
+  <ContactCTA />
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import ContactCTA from "@/components/ContactCTA.astro";
+import { business } from "@/data/business";
+---
+
+<BaseLayout
+  title="Sobre NVPC"
+  description="NVPC es una empresa de soluciones informáticas y tecnológicas con presencia en Sevilla, especializada en soporte técnico para empresas y profesionales."
+  canonical="/sobre-nvpc/"
+>
+  <Breadcrumbs items={[{ label: "Sobre NVPC" }]} />
+
+  <section class="container-nvpc py-[var(--space-section)]">
+    <h1 class="max-w-2xl text-3xl font-bold text-ink sm:text-4xl">Sobre NVPC</h1>
+
+    <div class="mt-8 max-w-3xl space-y-6 text-lg text-ink-soft">
+      <p>
+        NVPC (Networking Virtual PC) ayuda a empresas y profesionales a mantener sus equipos, redes y sistemas funcionando, con soporte técnico cercano, remoto y presencial.
+      </p>
+      <p>
+        Trabajamos principalmente con empresas, autónomos y profesionales en Sevilla y su provincia, y ofrecemos servicios remotos para negocios en cualquier punto de España.
+      </p>
+      <p>
+        Nuestro enfoque no es ofrecer cualquier servicio tecnológico posible, sino centrarnos en lo que más impacta en el día a día de una empresa: que los equipos, la red y los sistemas funcionen, y que cuando algo falla, haya alguien que lo resuelva con rapidez y claridad.
+      </p>
+      <p class="rounded-lg border border-border bg-surface p-5 text-base">
+        Años de experiencia, número de clientes y certificaciones: [PENDIENTE DE CONFIRMAR]. Actualizaremos esta sección cuando dispongamos de datos verificables.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2">
+      <div class="rounded-lg border border-border bg-paper p-6">
+        <h2 class="font-heading text-lg font-bold text-ink">Cómo trabajamos</h2>
+        <p class="mt-2 text-sm text-ink-soft">
+          Escuchamos el problema, revisamos la situación real de tus equipos o tu infraestructura, proponemos una solución concreta y la implementamos con soporte posterior.
+        </p>
+      </div>
+      <div class="rounded-lg border border-border bg-paper p-6">
+        <h2 class="font-heading text-lg font-bold text-ink">Dónde trabajamos</h2>
+        <p class="mt-2 text-sm text-ink-soft">
+          {business.areaPrimary} de forma presencial. {business.areaSecondary} para soporte remoto, mantenimiento y diseño web.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ContactCTA />
+</BaseLayout>

@@ -1,0 +1,40 @@
+---
+type Props = {
+  title: string;
+  problem: string;
+  solution: string;
+  benefit: string;
+  href: string;
+  featured?: boolean;
+};
+
+const { title, problem, solution, benefit, href, featured = false } = Astro.props;
+---
+
+<article
+  class={`flex flex-col gap-3 rounded-lg border border-border bg-paper p-6 ${
+    featured ? "sm:col-span-2 sm:p-8" : ""
+  }`}
+>
+  <h3 class={`font-heading font-bold ${featured ? "text-2xl" : "text-xl"} text-ink`}>
+    <a href={href} class="hover:text-brand">{title}</a>
+  </h3>
+  <dl class="grid gap-2 text-sm text-ink-soft">
+    <div>
+      <dt class="font-semibold text-ink">Problema</dt>
+      <dd>{problem}</dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-ink">Solución</dt>
+      <dd>{solution}</dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-ink">Beneficio</dt>
+      <dd>{benefit}</dd>
+    </div>
+  </dl>
+  <a href={href} class="mt-2 inline-flex items-center gap-1 font-semibold text-brand hover:underline">
+    Ver servicio
+    <span aria-hidden="true">→</span>
+  </a>
+</article>

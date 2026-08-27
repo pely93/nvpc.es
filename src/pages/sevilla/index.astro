@@ -1,0 +1,71 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import ContactCTA from "@/components/ContactCTA.astro";
+import { getCollection } from "astro:content";
+import { siteUrl } from "@/config";
+import { business } from "@/data/business";
+
+const locations = await getCollection("locations");
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Sevilla", item: `${siteUrl}/sevilla/` },
+  ],
+};
+---
+
+<BaseLayout
+  title="Soporte informático en Sevilla"
+  description="NVPC ofrece soporte informático, mantenimiento y redes para empresas en Sevilla, con servicio presencial y remoto."
+  canonical="/sevilla/"
+  jsonLd={jsonLd}
+>
+  <Breadcrumbs items={[{ label: "Sevilla" }]} />
+
+  <section class="container-nvpc py-[var(--space-section)]">
+    <h1 class="max-w-2xl text-3xl font-bold text-ink sm:text-4xl">Soporte informático en Sevilla</h1>
+    <p class="mt-4 max-w-2xl text-lg text-ink-soft">
+      NVPC presta servicio presencial en Sevilla capital y su área metropolitana, y soporte remoto para el resto de España. Trabajamos con oficinas, comercios, autónomos y empresas que necesitan mantener sus equipos y redes en funcionamiento.
+    </p>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-lg border border-border bg-surface p-5">
+        <h2 class="font-heading text-lg font-bold text-ink">Servicio presencial</h2>
+        <p class="mt-2 text-sm text-ink-soft">
+          Visitas para instalaciones, averías de hardware, cableado y revisiones que requieren estar en el lugar.
+        </p>
+      </div>
+      <div class="rounded-lg border border-border bg-surface p-5">
+        <h2 class="font-heading text-lg font-bold text-ink">Servicio remoto</h2>
+        <p class="mt-2 text-sm text-ink-soft">
+          Soporte, configuración y mantenimiento que no requiere desplazamiento, disponible en toda España.
+        </p>
+      </div>
+      <div class="rounded-lg border border-border bg-surface p-5">
+        <h2 class="font-heading text-lg font-bold text-ink">Horario</h2>
+        <p class="mt-2 text-sm text-ink-soft">{business.schedule}</p>
+      </div>
+    </div>
+
+    <h2 class="mt-14 text-2xl font-bold text-ink">Servicios en Sevilla</h2>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+      {locations.map((loc) => (
+        <li class="rounded-lg border border-border bg-paper p-5">
+          <a href={`/sevilla/${loc.slug}/`} class="font-heading text-lg font-bold text-ink hover:text-brand">
+            {loc.data.title}
+          </a>
+          <p class="mt-2 text-sm text-ink-soft">{loc.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <ContactCTA
+    title="¿Necesitas soporte informático en Sevilla?"
+    description="Cuéntanos qué necesita tu empresa y te decimos si puede resolverse en remoto o requiere una visita."
+  />
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import PricingCard from "@/components/PricingCard.astro";
+import FAQ from "@/components/FAQ.astro";
+import ContactCTA from "@/components/ContactCTA.astro";
+import { pricingPlans, pricingFaq } from "@/data/pricing";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: pricingFaq.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+---
+
+<BaseLayout
+  title="Tarifas planas de mantenimiento informático"
+  description="Tarifas planas de mantenimiento informático para autónomos y empresas, con soporte remoto y presencial adaptado a cada negocio."
+  canonical="/tarifas/"
+  jsonLd={jsonLd}
+>
+  <Breadcrumbs items={[{ label: "Tarifas planas" }]} />
+
+  <section class="container-nvpc py-[var(--space-section)]">
+    <h1 class="max-w-2xl text-3xl font-bold text-ink sm:text-4xl">
+      Tarifas planas de mantenimiento informático
+    </h1>
+    <p class="mt-4 max-w-2xl text-lg text-ink-soft">
+      Un soporte informático estable, con una tarifa mensual clara. Sin bonos de horas: un plan de mantenimiento continuo adaptado a tu empresa.
+    </p>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      {pricingPlans.map((plan) => <PricingCard plan={plan} />)}
+    </div>
+
+    <p class="mt-8 max-w-2xl rounded-lg border border-border bg-surface p-5 text-sm text-ink-soft">
+      Cada tarifa se adapta al número de equipos, complejidad de la infraestructura, necesidades de soporte y cobertura presencial.
+    </p>
+
+    <div class="mt-16 max-w-3xl">
+      <FAQ items={pricingFaq} title="Preguntas frecuentes sobre las tarifas" />
+    </div>
+  </section>
+
+  <ContactCTA
+    title="¿No sabes qué plan encaja con tu empresa?"
+    description="Cuéntanos cuántos equipos tienes y qué necesitas, y te proponemos el plan más adecuado."
+  />
+</BaseLayout>

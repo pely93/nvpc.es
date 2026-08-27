@@ -1,0 +1,58 @@
+---
+import { business } from "@/data/business";
+import { footerServiceLinks, footerLocationLinks } from "@/data/navigation";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border bg-ink text-white/80">
+  <div class="container-nvpc grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <p class="font-heading text-lg font-bold text-white">NVPC</p>
+      <p class="mt-2 text-sm">Networking Virtual PC</p>
+      <p class="mt-4 text-sm">
+        Soporte técnico y soluciones informáticas para empresas y profesionales en Sevilla, con servicio remoto para toda España.
+      </p>
+    </div>
+
+    <nav aria-label="Servicios en el pie de página">
+      <h2 class="font-heading text-sm font-semibold uppercase tracking-wide text-white">Servicios</h2>
+      <ul class="mt-4 space-y-2 text-sm">
+        {footerServiceLinks.map((link) => (
+          <li><a href={link.href} class="hover:text-white">{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav aria-label="Zonas de servicio en el pie de página">
+      <h2 class="font-heading text-sm font-semibold uppercase tracking-wide text-white">Zonas de servicio</h2>
+      <ul class="mt-4 space-y-2 text-sm">
+        {footerLocationLinks.map((link) => (
+          <li><a href={link.href} class="hover:text-white">{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="font-heading text-sm font-semibold uppercase tracking-wide text-white">Contacto</h2>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a href={business.phoneHref} class="hover:text-white">{business.phoneDisplay}</a></li>
+        <li><a href={`mailto:${business.email}`} class="hover:text-white">{business.email}</a></li>
+        <li>{business.schedule}</li>
+        <li>{business.areaPrimary}</li>
+        <li><a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 py-6">
+    <div class="container-nvpc flex flex-col gap-2 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; {year} NVPC · Networking Virtual PC. Todos los derechos reservados.</p>
+      <div class="flex gap-4">
+        <a href="/sobre-nvpc/" class="hover:text-white">Sobre NVPC</a>
+        <a href="/opinion/" class="hover:text-white">Opinión</a>
+        <a href="/contacto/" class="hover:text-white">Contacto</a>
+      </div>
+    </div>
+  </div>
+</footer>

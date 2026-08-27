@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <rect width="180" height="180" fill="#f5f7fa" stroke="#d9dfe7" stroke-width="2"/>
+  <text x="90" y="85" font-family="Arial, sans-serif" font-size="14" fill="#475467" text-anchor="middle">QR pendiente</text>
+  <text x="90" y="105" font-family="Arial, sans-serif" font-size="14" fill="#475467" text-anchor="middle">de configurar</text>
+</svg>

@@ -1,0 +1,159 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PrimaryButton from "@/components/PrimaryButton.astro";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+import TrustBar from "@/components/TrustBar.astro";
+import ServiceCard from "@/components/ServiceCard.astro";
+import ProcessSteps from "@/components/ProcessSteps.astro";
+import ContactCTA from "@/components/ContactCTA.astro";
+import ReviewCTA from "@/components/ReviewCTA.astro";
+import { business } from "@/data/business";
+import { siteUrl } from "@/config";
+
+const profiles = [
+  "Oficinas y despachos",
+  "Comercios",
+  "Autónomos",
+  "Clínicas y centros profesionales",
+  "Restaurantes y negocios locales",
+  "Empresas con equipos en remoto",
+];
+
+const steps = [
+  { title: "Nos cuentas qué necesitas", description: "Nos explicas tu problema o el estado de tus equipos e infraestructura." },
+  { title: "Revisamos", description: "Analizamos la situación real, en remoto o con una visita si hace falta." },
+  { title: "Proponemos una solución", description: "Te damos una propuesta clara, con alcance y presupuesto definidos." },
+  { title: "Implementamos y damos soporte", description: "Ponemos en marcha la solución y seguimos disponibles después." },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "NVPC · Networking Virtual PC",
+  telephone: "+34667200016",
+  email: business.email,
+  url: siteUrl,
+  areaServed: ["Sevilla", "España"],
+  openingHours: "Mo-Fr 09:30-17:30",
+};
+---
+
+<BaseLayout
+  title="Soporte informático para empresas en Sevilla"
+  description="Mantenimiento, redes y soluciones tecnológicas para que tu negocio trabaje sin interrupciones. Soporte remoto y presencial para empresas y profesionales."
+  canonical="/"
+  jsonLd={jsonLd}
+>
+  <section class="bg-surface">
+    <div class="container-nvpc grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h1 class="text-4xl font-bold leading-tight text-ink sm:text-5xl">
+          Soporte informático para empresas en Sevilla
+        </h1>
+        <p class="mt-5 text-lg text-ink-soft">
+          Mantenimiento, redes y soluciones tecnológicas para que tu negocio trabaje sin interrupciones.
+        </p>
+        <p class="mt-3 font-semibold text-brand">
+          Servicio remoto y presencial para empresas y profesionales.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <PrimaryButton href="/contacto/" size="lg">Solicitar presupuesto</PrimaryButton>
+          <WhatsAppButton />
+        </div>
+        <p class="mt-4 text-sm text-ink-soft">
+          O llama directamente al <a href={business.phoneHref} class="font-semibold text-brand hover:underline">{business.phoneDisplay}</a>
+        </p>
+      </div>
+      <div class="rounded-lg border border-border bg-paper p-8">
+        <p class="font-heading text-lg font-bold text-ink">Horario de atención</p>
+        <p class="mt-1 text-ink-soft">{business.schedule}</p>
+        <p class="mt-4 font-heading text-lg font-bold text-ink">Zona de trabajo</p>
+        <p class="mt-1 text-ink-soft">{business.areaPrimary}. {business.areaSecondary}.</p>
+      </div>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="container-nvpc py-[var(--space-section)]">
+    <h2 class="text-2xl font-bold text-ink sm:text-3xl">Nuestros servicios</h2>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+      <ServiceCard
+        featured
+        title="Mantenimiento informático"
+        problem="Los equipos fallan sin avisar y las incidencias frenan el trabajo diario."
+        solution="Revisión periódica, soporte remoto y presencial, y una tarifa mensual clara."
+        benefit="Menos interrupciones y presupuesto estable cada mes."
+        href="/servicios/mantenimiento-informatico/"
+      />
+      <ServiceCard
+        title="Redes y WiFi"
+        problem="Cortes de conexión y zonas sin cobertura en la oficina o el local."
+        solution="Diagnóstico, instalación y mantenimiento de redes LAN y WiFi."
+        benefit="Una red estable en todo el espacio de trabajo."
+        href="/servicios/redes-wifi/"
+      />
+      <ServiceCard
+        title="Seguridad y copias de seguridad"
+        problem="Contraseñas débiles o falta de copias recientes ponen en riesgo tu información."
+        solution="Revisión de accesos, actualizaciones y copias de seguridad configuradas."
+        benefit="Menos riesgo de pérdida de información y más continuidad."
+        href="/servicios/seguridad-informatica/"
+      />
+      <ServiceCard
+        title="Diseño web y servicios digitales"
+        problem="Una web anticuada o inexistente dificulta que te encuentren nuevos clientes."
+        solution="Webs corporativas y tiendas online responsive, con SEO técnico básico."
+        benefit="Una presencia online que representa bien a tu negocio."
+        href="/servicios/diseno-web/"
+      />
+    </div>
+    <div class="mt-6">
+      <PrimaryButton href="/servicios/" variant="outline">Ver todos los servicios</PrimaryButton>
+    </div>
+  </section>
+
+  <section class="bg-surface py-[var(--space-section)]">
+    <div class="container-nvpc">
+      <h2 class="text-2xl font-bold text-ink sm:text-3xl">Para quién trabajamos</h2>
+      <p class="mt-3 max-w-2xl text-ink-soft">
+        Ayudamos a distintos tipos de negocios a mantener sus equipos, redes y sistemas en funcionamiento.
+      </p>
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {profiles.map((profile) => (
+          <li class="rounded-lg border border-border bg-paper p-4 font-medium text-ink">{profile}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="container-nvpc py-[var(--space-section)]">
+    <ProcessSteps steps={steps} />
+  </section>
+
+  <section class="bg-brand-dark py-[var(--space-section)] text-white">
+    <div class="container-nvpc flex flex-col items-start gap-4">
+      <h2 class="text-2xl font-bold sm:text-3xl">
+        Un soporte informático estable, con una tarifa mensual clara.
+      </h2>
+      <p class="max-w-2xl text-white/80">
+        Tarifas planas de mantenimiento informático adaptadas al número de equipos y a las necesidades de soporte de tu empresa.
+      </p>
+      <PrimaryButton href="/tarifas/" size="lg" class="bg-accent hover:bg-accent/90">
+        Ver tarifas planas
+      </PrimaryButton>
+    </div>
+  </section>
+
+  <section class="container-nvpc py-[var(--space-section)]">
+    <h2 class="text-2xl font-bold text-ink sm:text-3xl">Confianza</h2>
+    <p class="mt-3 max-w-2xl text-ink-soft">
+      Puedes consultar nuestros <a href="/casos-de-exito/" class="text-brand hover:underline">casos de trabajo</a> y dejarnos tu opinión si ya has trabajado con nosotros.
+    </p>
+    <div class="mt-6 max-w-xl">
+      <ReviewCTA />
+    </div>
+  </section>
+
+  <ContactCTA />
+</BaseLayout>

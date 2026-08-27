@@ -1,0 +1,51 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import ContactCTA from "@/components/ContactCTA.astro";
+import { getCollection } from "astro:content";
+
+const articles = (await getCollection("articles")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const categoryLabels: Record<string, string> = {
+  "mantenimiento-informatico": "Mantenimiento informático",
+  "redes-wifi": "Redes y WiFi",
+  "seguridad-copias": "Seguridad y copias",
+  "recuperacion-datos": "Recuperación de datos",
+  "diseno-web": "Diseño web",
+  "trabajo-remoto": "Trabajo remoto",
+  "casos-de-trabajo": "Casos de trabajo",
+};
+---
+
+<BaseLayout
+  title="Blog de NVPC"
+  description="Artículos prácticos sobre mantenimiento informático, redes, seguridad, recuperación de datos y trabajo remoto."
+  canonical="/blog/"
+>
+  <Breadcrumbs items={[{ label: "Blog" }]} />
+
+  <section class="container-nvpc py-[var(--space-section)]">
+    <h1 class="max-w-2xl text-3xl font-bold text-ink sm:text-4xl">Blog</h1>
+    <p class="mt-4 max-w-2xl text-lg text-ink-soft">
+      Artículos con intención práctica sobre los servicios que ofrecemos, sin noticias tecnológicas genéricas.
+    </p>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {articles.map((article) => (
+        <article class="rounded-lg border border-border bg-paper p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-brand">
+            {categoryLabels[article.data.category]}
+          </p>
+          <h2 class="mt-2 font-heading text-lg font-bold text-ink">
+            <a href={`/blog/${article.slug}/`} class="hover:text-brand">{article.data.title}</a>
+          </h2>
+          <p class="mt-2 text-sm text-ink-soft">{article.data.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <ContactCTA />
+</BaseLayout>
