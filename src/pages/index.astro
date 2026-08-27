@@ -47,13 +47,13 @@ const jsonLd = {
   <section class="bg-surface">
     <div class="container-nvpc grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
       <div>
-        <h1 class="text-4xl font-bold leading-tight text-ink sm:text-5xl">
+        <h1 class="text-4xl leading-[1.1] text-ink sm:text-5xl">
           Soporte informático para empresas en Sevilla
         </h1>
-        <p class="mt-5 text-lg text-ink-soft">
+        <p class="mt-5 max-w-md text-lg text-ink-soft">
           Mantenimiento, redes y soluciones tecnológicas para que tu negocio trabaje sin interrupciones.
         </p>
-        <p class="mt-3 font-semibold text-brand">
+        <p class="mt-3 font-medium text-brand">
           Servicio remoto y presencial para empresas y profesionales.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
@@ -61,14 +61,14 @@ const jsonLd = {
           <WhatsAppButton />
         </div>
         <p class="mt-4 text-sm text-ink-soft">
-          O llama directamente al <a href={business.phoneHref} class="font-semibold text-brand hover:underline">{business.phoneDisplay}</a>
+          O llama directamente al <a href={business.phoneHref} class="font-medium text-brand hover:underline">{business.phoneDisplay}</a>
         </p>
       </div>
-      <div class="rounded-lg border border-border bg-paper p-8">
-        <p class="font-heading text-lg font-bold text-ink">Horario de atención</p>
-        <p class="mt-1 text-ink-soft">{business.schedule}</p>
-        <p class="mt-4 font-heading text-lg font-bold text-ink">Zona de trabajo</p>
-        <p class="mt-1 text-ink-soft">{business.areaPrimary}. {business.areaSecondary}.</p>
+      <div class="border-t-2 border-brand bg-paper p-8">
+        <p class="label-caps text-xs text-ink-faint">Horario de atención</p>
+        <p class="mt-1 font-heading text-lg text-ink">{business.schedule}</p>
+        <p class="mt-5 label-caps text-xs text-ink-faint">Zona de trabajo</p>
+        <p class="mt-1 font-heading text-lg text-ink">{business.areaPrimary}. {business.areaSecondary}.</p>
       </div>
     </div>
   </section>
@@ -76,7 +76,7 @@ const jsonLd = {
   <TrustBar />
 
   <section class="container-nvpc py-[var(--space-section)]">
-    <h2 class="text-2xl font-bold text-ink sm:text-3xl">Nuestros servicios</h2>
+    <h2 class="text-2xl text-ink sm:text-3xl">Nuestros servicios</h2>
     <div class="mt-8 grid gap-6 sm:grid-cols-2">
       <ServiceCard
         featured
@@ -114,14 +114,16 @@ const jsonLd = {
   </section>
 
   <section class="bg-surface py-[var(--space-section)]">
-    <div class="container-nvpc">
-      <h2 class="text-2xl font-bold text-ink sm:text-3xl">Para quién trabajamos</h2>
-      <p class="mt-3 max-w-2xl text-ink-soft">
-        Ayudamos a distintos tipos de negocios a mantener sus equipos, redes y sistemas en funcionamiento.
-      </p>
-      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="container-nvpc grid gap-8 lg:grid-cols-[1fr_1.4fr]">
+      <div>
+        <h2 class="text-2xl text-ink sm:text-3xl">Para quién trabajamos</h2>
+        <p class="mt-3 max-w-sm text-ink-soft">
+          Ayudamos a distintos tipos de negocios a mantener sus equipos, redes y sistemas en funcionamiento.
+        </p>
+      </div>
+      <ul class="grid grid-cols-1 divide-y divide-border border-t border-border sm:grid-cols-2 sm:divide-y-0">
         {profiles.map((profile) => (
-          <li class="rounded-lg border border-border bg-paper p-4 font-medium text-ink">{profile}</li>
+          <li class="py-3 font-heading text-lg text-ink sm:border-t sm:border-border sm:py-4">{profile}</li>
         ))}
       </ul>
     </div>
@@ -131,22 +133,22 @@ const jsonLd = {
     <ProcessSteps steps={steps} />
   </section>
 
-  <section class="bg-brand-dark py-[var(--space-section)] text-white">
+  <section class="border-t-2 border-accent bg-brand-dark py-[var(--space-section)] text-on-brand-dim">
     <div class="container-nvpc flex flex-col items-start gap-4">
-      <h2 class="text-2xl font-bold sm:text-3xl">
+      <h2 class="text-2xl text-on-brand sm:text-3xl">
         Un soporte informático estable, con una tarifa mensual clara.
       </h2>
-      <p class="max-w-2xl text-white/80">
+      <p class="max-w-2xl">
         Tarifas planas de mantenimiento informático adaptadas al número de equipos y a las necesidades de soporte de tu empresa.
       </p>
-      <PrimaryButton href="/tarifas/" size="lg" class="bg-accent hover:bg-accent/90">
+      <PrimaryButton href="/tarifas/" size="lg" class="bg-paper !text-brand hover:opacity-90">
         Ver tarifas planas
       </PrimaryButton>
     </div>
   </section>
 
   <section class="container-nvpc py-[var(--space-section)]">
-    <h2 class="text-2xl font-bold text-ink sm:text-3xl">Confianza</h2>
+    <h2 class="text-2xl text-ink sm:text-3xl">Confianza</h2>
     <p class="mt-3 max-w-2xl text-ink-soft">
       Puedes consultar nuestros <a href={withBase("/casos-de-exito/")} class="text-brand hover:underline">casos de trabajo</a> y dejarnos tu opinión si ya has trabajado con nosotros.
     </p>

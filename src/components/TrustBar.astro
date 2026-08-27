@@ -7,11 +7,13 @@ const items = [
 ];
 ---
 
-<section class="border-y border-border bg-surface py-8" aria-label="Áreas de trabajo de NVPC">
-  <div class="container-nvpc grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
+<section class="border-y border-border bg-surface py-7" aria-label="Áreas de trabajo de NVPC">
+  <div class="container-nvpc flex flex-wrap gap-x-8 gap-y-3">
     {
-      items.map((item) => (
-        <p class="text-sm font-semibold uppercase tracking-wide text-ink-soft">{item}</p>
+      items.map((item, i) => (
+        <p class={`label-caps text-xs text-ink-soft ${i > 0 ? "sm:border-l sm:border-border sm:pl-8" : ""}`}>
+          {item}
+        </p>
       ))
     }
   </div>

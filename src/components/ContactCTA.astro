@@ -14,17 +14,17 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-brand py-[var(--space-section)] text-white">
+<section class="border-t-2 border-accent bg-brand py-[var(--space-section)] text-on-brand-dim">
   <div class="container-nvpc flex flex-col items-start gap-6">
     <div class="max-w-2xl">
-      <h2 class="text-2xl font-bold sm:text-3xl">{title}</h2>
-      <p class="mt-3 text-white/80">{description}</p>
+      <h2 class="text-2xl text-on-brand sm:text-3xl">{title}</h2>
+      <p class="mt-3">{description}</p>
     </div>
     <div class="flex flex-wrap gap-3">
-      <PrimaryButton href="/contacto/" variant="solid" size="lg" class="bg-accent hover:bg-accent/90">
+      <PrimaryButton href="/contacto/" variant="solid" size="lg" class="bg-paper !text-brand hover:opacity-90">
         Solicitar presupuesto
       </PrimaryButton>
-      <PrimaryButton href={business.phoneHref} variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-brand">
+      <PrimaryButton href={business.phoneHref} variant="outline" size="lg" class="border-paper !text-on-brand hover:bg-paper hover:!text-brand">
         Llamar: {business.phoneDisplay}
       </PrimaryButton>
       <WhatsAppButton />

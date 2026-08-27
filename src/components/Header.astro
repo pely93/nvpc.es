@@ -8,24 +8,24 @@ import MobileMenu from "@/components/MobileMenu.astro";
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 border-b border-border bg-paper/95 backdrop-blur">
+<header class="sticky top-0 z-50 border-b border-border bg-paper shadow-[0_1px_0_var(--color-border)]">
   <div class="container-nvpc flex h-16 items-center justify-between gap-4 sm:h-20">
-    <a href={withBase("/")} class="flex items-center gap-2 font-heading text-lg font-bold text-brand">
-      <span class="flex h-9 w-9 items-center justify-center rounded-md bg-brand text-sm font-bold text-white" aria-hidden="true">
+    <a href={withBase("/")} class="flex items-center gap-2.5 font-heading text-lg font-semibold text-ink">
+      <span class="flex h-9 w-9 items-center justify-center rounded-[3px] bg-brand text-sm font-semibold text-paper" aria-hidden="true">
         NV
       </span>
       NVPC
     </a>
 
     <nav aria-label="Navegación principal" class="hidden lg:block">
-      <ul class="flex items-center gap-6 text-sm font-medium text-ink">
+      <ul class="label-caps flex items-center gap-7 text-xs text-ink-soft">
         {
           mainNav.map((item) => (
             <li>
               <a
                 href={withBase(item.href)}
                 aria-current={currentPath.startsWith(withBase(item.href)) ? "page" : undefined}
-                class="hover:text-brand aria-[current=page]:text-brand"
+                class="border-b-2 border-transparent pb-1 hover:text-ink aria-[current=page]:border-accent aria-[current=page]:text-ink"
               >
                 {item.label}
               </a>
@@ -35,8 +35,8 @@ const currentPath = Astro.url.pathname;
       </ul>
     </nav>
 
-    <div class="hidden items-center gap-3 lg:flex">
-      <a href={business.phoneHref} class="text-sm font-semibold text-ink hover:text-brand">
+    <div class="hidden items-center gap-4 lg:flex">
+      <a href={business.phoneHref} class="text-sm font-medium text-ink-soft hover:text-brand">
         {business.phoneDisplay}
       </a>
       <PrimaryButton href="/contacto/" size="md">Solicitar presupuesto</PrimaryButton>

@@ -6,8 +6,8 @@ const { items, title = "Preguntas frecuentes" } = Astro.props;
 ---
 
 <section aria-labelledby="faq-heading">
-  <h2 id="faq-heading" class="text-2xl font-bold text-ink">{title}</h2>
-  <div class="mt-6 divide-y divide-border rounded-lg border border-border">
+  <h2 id="faq-heading" class="text-2xl text-ink">{title}</h2>
+  <div class="mt-6 divide-y divide-border rounded-[3px] border border-border">
     {
       items.map((item) => (
         <details class="group p-4 sm:p-5">

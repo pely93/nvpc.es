@@ -5,8 +5,8 @@ type Props = { compact?: boolean };
 const { compact = false } = Astro.props;
 ---
 
-<div class={`rounded-lg border border-border bg-surface ${compact ? "p-4" : "p-6 sm:p-8"}`}>
-  <p class={`font-heading font-bold text-ink ${compact ? "text-base" : "text-xl"}`}>
+<div class={`rounded-[3px] border border-border bg-surface ${compact ? "p-4" : "p-6 sm:p-8"}`}>
+  <p class={`font-heading text-ink ${compact ? "text-base" : "text-xl"}`}>
     ¿Ya trabajamos contigo? Cuéntaselo a otros.
   </p>
   <p class="mt-2 text-sm text-ink-soft">
@@ -16,7 +16,7 @@ const { compact = false } = Astro.props;
     href={business.googleReviewUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class="mt-4 inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark"
+    class="mt-4 inline-flex min-h-[44px] items-center justify-center rounded-[3px] bg-brand px-5 py-2.5 label-caps text-xs text-paper hover:bg-brand-dark"
   >
     Dejar una reseña en Google
   </a>

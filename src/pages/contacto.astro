@@ -14,7 +14,7 @@ import { business } from "@/data/business";
   <Breadcrumbs items={[{ label: "Contacto" }]} />
 
   <section class="container-nvpc py-[var(--space-section)]">
-    <h1 class="max-w-2xl text-3xl font-bold text-ink sm:text-4xl">Contacto</h1>
+    <h1 class="max-w-2xl text-3xl text-ink sm:text-4xl">Contacto</h1>
     <p class="mt-4 max-w-2xl text-lg text-ink-soft">
       Cuéntanos qué necesita tu empresa. Respondemos en nuestro horario comercial: {business.schedule}.
     </p>
@@ -23,13 +23,13 @@ import { business } from "@/data/business";
       <div class="space-y-4">
         <a
           href={business.phoneHref}
-          class="flex min-h-[44px] items-center gap-3 rounded-lg border border-border bg-paper p-5 font-semibold text-ink hover:border-brand hover:text-brand"
+          class="flex min-h-[44px] items-center gap-3 rounded-[3px] border border-border bg-paper p-5 font-semibold text-ink hover:border-brand hover:text-brand"
         >
           <span aria-hidden="true">📞</span> Llamar: {business.phoneDisplay}
         </a>
         <a
           href={`mailto:${business.email}`}
-          class="flex min-h-[44px] items-center gap-3 rounded-lg border border-border bg-paper p-5 font-semibold text-ink hover:border-brand hover:text-brand"
+          class="flex min-h-[44px] items-center gap-3 rounded-[3px] border border-border bg-paper p-5 font-semibold text-ink hover:border-brand hover:text-brand"
         >
           <span aria-hidden="true">✉️</span> {business.email}
         </a>
@@ -39,7 +39,7 @@ import { business } from "@/data/business";
         </p>
       </div>
 
-      <form class="space-y-4 rounded-lg border border-border bg-surface p-6" id="contact-form" novalidate>
+      <form class="space-y-4 rounded-[3px] border border-border bg-surface p-6" id="contact-form" novalidate>
         <p class="text-sm text-ink-soft">
           Formulario de contacto — el envío se gestiona desde tu proveedor de formularios habitual
           [PENDIENTE DE CONFIRMAR: conectar con el servicio de envío elegido]. Mientras tanto, usa el teléfono,
@@ -53,7 +53,7 @@ import { business } from "@/data/business";
             id="name"
             name="name"
             required
-            class="mt-1 w-full rounded-md border border-border bg-paper px-3 py-2.5 text-ink"
+            class="mt-1 w-full rounded-[3px] border border-border bg-paper px-3 py-2.5 text-ink"
           />
         </div>
 
@@ -64,7 +64,7 @@ import { business } from "@/data/business";
             id="email"
             name="email"
             required
-            class="mt-1 w-full rounded-md border border-border bg-paper px-3 py-2.5 text-ink"
+            class="mt-1 w-full rounded-[3px] border border-border bg-paper px-3 py-2.5 text-ink"
           />
         </div>
 
@@ -74,7 +74,7 @@ import { business } from "@/data/business";
             type="tel"
             id="phone"
             name="phone"
-            class="mt-1 w-full rounded-md border border-border bg-paper px-3 py-2.5 text-ink"
+            class="mt-1 w-full rounded-[3px] border border-border bg-paper px-3 py-2.5 text-ink"
           />
         </div>
 
@@ -85,7 +85,7 @@ import { business } from "@/data/business";
             name="message"
             rows="5"
             required
-            class="mt-1 w-full rounded-md border border-border bg-paper px-3 py-2.5 text-ink"
+            class="mt-1 w-full rounded-[3px] border border-border bg-paper px-3 py-2.5 text-ink"
           ></textarea>
         </div>
 
@@ -93,7 +93,7 @@ import { business } from "@/data/business";
 
         <button
           type="submit"
-          class="flex min-h-[44px] w-full items-center justify-center rounded-md bg-brand px-5 py-2.5 font-semibold text-white hover:bg-brand-dark"
+          class="flex min-h-[44px] w-full items-center justify-center rounded-[3px] bg-brand px-5 py-2.5 label-caps text-xs text-paper hover:bg-brand-dark"
         >
           Enviar solicitud
         </button>

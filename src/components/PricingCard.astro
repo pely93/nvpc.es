@@ -7,24 +7,24 @@ const { plan } = Astro.props;
 ---
 
 <article
-  class={`flex flex-col gap-5 rounded-lg border p-6 sm:p-8 ${
-    plan.highlighted ? "border-brand bg-surface shadow-sm ring-1 ring-brand" : "border-border bg-paper"
+  class={`flex flex-col gap-5 border p-6 sm:p-8 ${
+    plan.highlighted ? "border-t-2 border-t-accent border-border bg-surface" : "border-border bg-paper"
   }`}
 >
   {plan.highlighted && (
-    <p class="w-fit rounded-full bg-brand px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+    <p class="label-caps w-fit text-xs text-accent">
       Más elegido
     </p>
   )}
   <header>
-    <h3 class="font-heading text-xl font-bold text-ink">{plan.name}</h3>
+    <h3 class="font-heading text-xl text-ink">{plan.name}</h3>
     <p class="mt-1 text-sm text-ink-soft">{plan.audience}</p>
   </header>
-  <p class="text-lg font-bold text-brand">{plan.priceNote}</p>
+  <p class="font-heading text-lg text-brand">{plan.priceNote}</p>
   <p class="text-sm text-ink-soft">{plan.description}</p>
 
   <div>
-    <h4 class="text-sm font-semibold text-ink">Qué incluye</h4>
+    <h4 class="label-caps text-xs text-ink-faint">Qué incluye</h4>
     <ul class="mt-2 space-y-1.5 text-sm text-ink-soft">
       {plan.includes.map((item) => (
         <li class="flex gap-2">
@@ -36,7 +36,7 @@ const { plan } = Astro.props;
   </div>
 
   <div>
-    <h4 class="text-sm font-semibold text-ink">Qué no incluye</h4>
+    <h4 class="label-caps text-xs text-ink-faint">Qué no incluye</h4>
     <ul class="mt-2 space-y-1.5 text-sm text-ink-soft">
       {plan.excludes.map((item) => (
         <li class="flex gap-2">

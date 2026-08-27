@@ -24,32 +24,32 @@ const plannedLocalities = [
   <Breadcrumbs items={[{ label: "Zonas de servicio" }]} />
 
   <section class="container-nvpc py-[var(--space-section)]">
-    <h1 class="max-w-2xl text-3xl font-bold text-ink sm:text-4xl">Zonas de servicio</h1>
+    <h1 class="max-w-2xl text-3xl text-ink sm:text-4xl">Zonas de servicio</h1>
     <p class="mt-4 max-w-2xl text-lg text-ink-soft">
       Prestamos servicio presencial en Sevilla y su área metropolitana, y soporte remoto en cualquier punto de España.
     </p>
 
     <div class="mt-10 grid gap-6 sm:grid-cols-2">
-      <div class="rounded-lg border border-border bg-surface p-6">
-        <h2 class="font-heading text-xl font-bold text-ink">Servicio presencial</h2>
+      <div class="rounded-[3px] border border-border bg-surface p-6">
+        <h2 class="font-heading text-xl text-ink">Servicio presencial</h2>
         <p class="mt-2 text-ink-soft">
           <a href={withBase("/sevilla/")} class="font-semibold text-brand hover:underline">Sevilla capital y área metropolitana</a>.
         </p>
       </div>
-      <div class="rounded-lg border border-border bg-surface p-6">
-        <h2 class="font-heading text-xl font-bold text-ink">Servicio remoto</h2>
+      <div class="rounded-[3px] border border-border bg-surface p-6">
+        <h2 class="font-heading text-xl text-ink">Servicio remoto</h2>
         <p class="mt-2 text-ink-soft">Soporte técnico, mantenimiento y diseño web en toda España.</p>
       </div>
     </div>
 
     <div class="mt-14">
-      <h2 class="text-2xl font-bold text-ink">Próximas zonas</h2>
+      <h2 class="text-2xl text-ink">Próximas zonas</h2>
       <p class="mt-3 max-w-2xl text-ink-soft">
         Estamos preparando páginas específicas para las siguientes localidades del área metropolitana de Sevilla. Se publicarán cuando exista cobertura real confirmada e información local suficiente.
       </p>
       <ul class="mt-6 flex flex-wrap gap-3">
         {plannedLocalities.map((locality) => (
-          <li class="rounded-full border border-border bg-paper px-4 py-2 text-sm text-ink-soft">
+          <li class="rounded-[3px] border border-border bg-paper px-4 py-2 text-sm text-ink-soft">
             {locality} — [PENDIENTE DE CONFIRMAR]
           </li>
         ))}

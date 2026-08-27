@@ -15,28 +15,28 @@ const resolvedHref = withBase(href);
 ---
 
 <article
-  class={`flex flex-col gap-3 rounded-lg border border-border bg-paper p-6 ${
-    featured ? "sm:col-span-2 sm:p-8" : ""
+  class={`flex flex-col gap-4 border-t-2 border-border bg-paper p-6 ${
+    featured ? "sm:col-span-2 sm:p-8 border-t-brand" : ""
   }`}
 >
-  <h3 class={`font-heading font-bold ${featured ? "text-2xl" : "text-xl"} text-ink`}>
+  <h3 class={`font-heading ${featured ? "text-2xl" : "text-xl"} text-ink`}>
     <a href={resolvedHref} class="hover:text-brand">{title}</a>
   </h3>
-  <dl class="grid gap-2 text-sm text-ink-soft">
+  <dl class="grid gap-3 text-sm text-ink-soft">
     <div>
-      <dt class="font-semibold text-ink">Problema</dt>
-      <dd>{problem}</dd>
+      <dt class="label-caps text-xs text-ink-faint">Problema</dt>
+      <dd class="mt-0.5 text-ink">{problem}</dd>
     </div>
     <div>
-      <dt class="font-semibold text-ink">Solución</dt>
-      <dd>{solution}</dd>
+      <dt class="label-caps text-xs text-ink-faint">Solución</dt>
+      <dd class="mt-0.5 text-ink">{solution}</dd>
     </div>
     <div>
-      <dt class="font-semibold text-ink">Beneficio</dt>
-      <dd>{benefit}</dd>
+      <dt class="label-caps text-xs text-ink-faint">Beneficio</dt>
+      <dd class="mt-0.5 text-ink">{benefit}</dd>
     </div>
   </dl>
-  <a href={resolvedHref} class="mt-2 inline-flex items-center gap-1 font-semibold text-brand hover:underline">
+  <a href={resolvedHref} class="mt-1 inline-flex items-center gap-1 text-sm font-medium text-brand hover:underline">
     Ver servicio
     <span aria-hidden="true">→</span>
   </a>

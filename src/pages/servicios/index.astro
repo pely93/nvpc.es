@@ -29,18 +29,18 @@ for (const cat of Object.values(byCategory)) {
   <Breadcrumbs items={[{ label: "Servicios" }]} />
 
   <section class="container-nvpc py-[var(--space-section)]">
-    <h1 class="max-w-2xl text-3xl font-bold text-ink sm:text-4xl">Servicios informáticos para empresas</h1>
+    <h1 class="max-w-2xl text-3xl text-ink sm:text-4xl">Servicios informáticos para empresas</h1>
     <p class="mt-4 max-w-2xl text-lg text-ink-soft">
       Organizamos nuestros servicios en cuatro categorías claras, con soporte remoto y presencial según lo que necesite cada caso.
     </p>
 
     {Object.values(byCategory).map((cat) => (
       <div class="mt-12">
-        <h2 class="text-2xl font-bold text-ink">{cat.title}</h2>
+        <h2 class="text-2xl text-ink">{cat.title}</h2>
         <ul class="mt-5 grid gap-4 sm:grid-cols-2">
           {cat.items.map((item) => (
-            <li class="rounded-lg border border-border bg-paper p-5">
-              <a href={withBase(`/servicios/${item.slug}/`)} class="font-heading text-lg font-bold text-ink hover:text-brand">
+            <li class="rounded-[3px] border border-border bg-paper p-5">
+              <a href={withBase(`/servicios/${item.slug}/`)} class="font-heading text-lg text-ink hover:text-brand">
                 {item.data.title}
               </a>
               <p class="mt-2 text-sm text-ink-soft">{item.data.description}</p>
