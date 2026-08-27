@@ -47,11 +47,13 @@ npm run test       # Vitest
 
 ## Despliegue en GitHub Pages
 
-El sitio está configurado como exportación estática (`output: "static"`) para publicarse como GitHub Pages de proyecto en `https://pely93.github.io/nvpc-web/`, no en la raíz de un dominio. Esto implica dos ajustes que hay que mantener sincronizados si cambia la URL de destino:
+El sitio se publica como GitHub Pages de proyecto en `https://pely93.github.io/nvpc.es/` mediante el workflow `.github/workflows/deploy.yml` (build con Astro + `actions/deploy-pages`). Para que este workflow sea el que despliegue, el repositorio debe tener **Settings → Pages → Build and deployment → Source: "GitHub Actions"** (si está en "Deploy from a branch", GitHub intenta procesar el repo con Jekyll y falla, porque interpreta el frontmatter `---` de los componentes `.astro` como YAML).
 
-- `astro.config.mjs`: `site` (URL completa) y `base` (`/nvpc-web`).
+GitHub Pages de proyecto sirve siempre en `/<nombre-del-repo>/` — esa subruta no es configurable, tiene que coincidir con el nombre real del repositorio (`nvpc.es` en este caso). Esto implica dos ajustes que hay que mantener sincronizados si el repositorio cambia de nombre o de owner:
+
+- `astro.config.mjs`: `site` (origen, sin subruta) y `base` (`/nvpc.es`, el nombre del repo).
 - `src/config.ts`: `siteUrl`, usado para construir canonicals, Open Graph y JSON-LD absolutos.
 
 Como GitHub Pages sirve el sitio bajo esa subruta, ningún enlace interno puede escribirse como ruta absoluta pelada (`href="/tarifas/"`); hay que pasarlo por `withBase()` (`src/config.ts`) o por un componente que ya lo haga internamente (`PrimaryButton`, `ServiceCard`, `CaseStudyCard`, `Breadcrumbs`). Los enlaces `[texto](/ruta/)` escritos en Markdown se reescriben automáticamente en build mediante un plugin remark definido en `astro.config.mjs`.
 
-Si en el futuro el sitio pasa a servirse en la raíz de un dominio propio (p. ej. `nvpc.es`), hay que: quitar `base` de `astro.config.mjs`, cambiar `site` a la URL raíz y actualizar `siteUrl` en `src/config.ts` a la misma URL sin subruta.
+Si en el futuro el sitio pasa a servirse en la raíz de un dominio propio (p. ej. `nvpc.es` como dominio, con un `CNAME`), hay que: quitar `base` de `astro.config.mjs`, cambiar `site` a la URL raíz y actualizar `siteUrl` en `src/config.ts` a la misma URL sin subruta.
