@@ -3,7 +3,11 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import { visit } from "unist-util-visit";
 
-const base = "/nvpc-web";
+// GitHub Pages de proyecto sirve el sitio en /<nombre-del-repo>/, sin
+// posibilidad de elegir otra subruta. El repositorio se llama "nvpc.es",
+// así que la URL real es pely93.github.io/nvpc.es/ (verificado en el log
+// del deploy: "Evaluated environment url: https://pely93.github.io/nvpc.es/").
+const base = "/nvpc.es";
 
 // Los enlaces internos escritos a mano en el contenido Markdown (p. ej.
 // "[tarifas](/tarifas/)") no pasan por ningún componente de Astro, así que
@@ -20,11 +24,6 @@ function rewriteInternalMarkdownLinks() {
   };
 }
 
-// El repositorio se publica como GitHub Pages de proyecto
-// (pely93.github.io/nvpc-web/), no en la raíz del dominio, así que Astro
-// necesita conocer esta subruta (`base`) para generar rutas de build
-// correctas; `site` queda como el origen, sin la subruta.
-//
 // Sitemap generates sitemap-index.xml/sitemap-0.xml automatically from every
 // page emitted at build time — required by the SEO brief and cheaper than
 // maintaining a manual URL list by hand.
