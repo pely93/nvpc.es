@@ -1,6 +1,7 @@
 ---
 import { mainNav } from "@/data/navigation";
 import { business } from "@/data/business";
+import { withBase } from "@/config";
 ---
 
 <div class="lg:hidden">
@@ -42,7 +43,7 @@ import { business } from "@/data/business";
         {
           mainNav.map((item) => (
             <li>
-              <a href={item.href} class="block min-h-[44px] py-3 hover:text-brand">
+              <a href={withBase(item.href)} class="block min-h-[44px] py-3 hover:text-brand">
                 {item.label}
               </a>
             </li>
@@ -51,7 +52,7 @@ import { business } from "@/data/business";
       </ul>
       <div class="mt-6 flex flex-col gap-3">
         <a
-          href="/contacto/"
+          href={withBase("/contacto/")}
           class="flex min-h-[44px] items-center justify-center rounded-md bg-brand px-5 py-3 text-center font-semibold text-white"
         >
           Solicitar presupuesto

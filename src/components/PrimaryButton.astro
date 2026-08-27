@@ -1,4 +1,6 @@
 ---
+import { withBase } from "@/config";
+
 type Props = {
   href: string;
   variant?: "solid" | "outline" | "ghost";
@@ -7,6 +9,10 @@ type Props = {
 };
 
 const { href, variant = "solid", size = "md", class: className = "" } = Astro.props;
+
+// Solo las rutas internas ("/contacto/") necesitan la subruta de GitHub
+// Pages; tel:, mailto: y enlaces externos deben quedar intactos.
+const resolvedHref = href.startsWith("/") ? withBase(href) : href;
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-colors min-h-[44px] focus-visible:outline-offset-2";
@@ -21,6 +27,6 @@ const variants = {
 };
 ---
 
-<a href={href} class={`${base} ${sizes[size]} ${variants[variant]} ${className}`}>
+<a href={resolvedHref} class={`${base} ${sizes[size]} ${variants[variant]} ${className}`}>
   <slot />
 </a>

@@ -8,7 +8,7 @@ import ProcessSteps from "@/components/ProcessSteps.astro";
 import ContactCTA from "@/components/ContactCTA.astro";
 import ReviewCTA from "@/components/ReviewCTA.astro";
 import { business } from "@/data/business";
-import { siteUrl } from "@/config";
+import { siteUrl, withBase } from "@/config";
 
 const profiles = [
   "Oficinas y despachos",
@@ -148,7 +148,7 @@ const jsonLd = {
   <section class="container-nvpc py-[var(--space-section)]">
     <h2 class="text-2xl font-bold text-ink sm:text-3xl">Confianza</h2>
     <p class="mt-3 max-w-2xl text-ink-soft">
-      Puedes consultar nuestros <a href="/casos-de-exito/" class="text-brand hover:underline">casos de trabajo</a> y dejarnos tu opinión si ya has trabajado con nosotros.
+      Puedes consultar nuestros <a href={withBase("/casos-de-exito/")} class="text-brand hover:underline">casos de trabajo</a> y dejarnos tu opinión si ya has trabajado con nosotros.
     </p>
     <div class="mt-6 max-w-xl">
       <ReviewCTA />

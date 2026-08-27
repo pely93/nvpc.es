@@ -44,3 +44,14 @@ npm run test       # Vitest
 ## Ampliar con nuevas zonas
 
 `/zonas/` lista las localidades previstas (Dos Hermanas, Alcalá de Guadaíra, etc.) sin publicar todavía páginas propias. Para añadir una localidad real, crea una entrada en `src/content/locations/` con contenido específico (no dupliques el de otra localidad) y enlázala desde `/sevilla/` y `/zonas/`.
+
+## Despliegue en GitHub Pages
+
+El sitio está configurado como exportación estática (`output: "static"`) para publicarse como GitHub Pages de proyecto en `https://pely93.github.io/nvpc-web/`, no en la raíz de un dominio. Esto implica dos ajustes que hay que mantener sincronizados si cambia la URL de destino:
+
+- `astro.config.mjs`: `site` (URL completa) y `base` (`/nvpc-web`).
+- `src/config.ts`: `siteUrl`, usado para construir canonicals, Open Graph y JSON-LD absolutos.
+
+Como GitHub Pages sirve el sitio bajo esa subruta, ningún enlace interno puede escribirse como ruta absoluta pelada (`href="/tarifas/"`); hay que pasarlo por `withBase()` (`src/config.ts`) o por un componente que ya lo haga internamente (`PrimaryButton`, `ServiceCard`, `CaseStudyCard`, `Breadcrumbs`). Los enlaces `[texto](/ruta/)` escritos en Markdown se reescriben automáticamente en build mediante un plugin remark definido en `astro.config.mjs`.
+
+Si en el futuro el sitio pasa a servirse en la raíz de un dominio propio (p. ej. `nvpc.es`), hay que: quitar `base` de `astro.config.mjs`, cambiar `site` a la URL raíz y actualizar `siteUrl` en `src/config.ts` a la misma URL sin subruta.

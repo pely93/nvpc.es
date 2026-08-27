@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import ContactCTA from "@/components/ContactCTA.astro";
 import { getCollection } from "astro:content";
+import { withBase } from "@/config";
 
 const services = await getCollection("services");
 const byCategory = {
@@ -39,7 +40,7 @@ for (const cat of Object.values(byCategory)) {
         <ul class="mt-5 grid gap-4 sm:grid-cols-2">
           {cat.items.map((item) => (
             <li class="rounded-lg border border-border bg-paper p-5">
-              <a href={`/servicios/${item.slug}/`} class="font-heading text-lg font-bold text-ink hover:text-brand">
+              <a href={withBase(`/servicios/${item.slug}/`)} class="font-heading text-lg font-bold text-ink hover:text-brand">
                 {item.data.title}
               </a>
               <p class="mt-2 text-sm text-ink-soft">{item.data.description}</p>

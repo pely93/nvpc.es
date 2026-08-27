@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { business } from "@/data/business";
+import { withBase } from "@/config";
 ---
 
 <BaseLayout
@@ -26,7 +27,7 @@ import { business } from "@/data/business";
 
       <div class="mt-10 flex flex-col items-center gap-2">
         <img
-          src={business.googleReviewQrUrl !== "[GOOGLE_REVIEW_QR_PENDIENTE]" ? business.googleReviewQrUrl : "/images/qr-placeholder.svg"}
+          src={business.googleReviewQrUrl !== "[GOOGLE_REVIEW_QR_PENDIENTE]" ? business.googleReviewQrUrl : withBase("/images/qr-placeholder.svg")}
           alt="Código QR para dejar una reseña de NVPC en Google"
           width="180"
           height="180"
