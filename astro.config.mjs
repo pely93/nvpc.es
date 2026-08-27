@@ -20,15 +20,16 @@ function rewriteInternalMarkdownLinks() {
   };
 }
 
+// El repositorio se publica como GitHub Pages de proyecto
+// (pely93.github.io/nvpc-web/), no en la raíz del dominio, así que Astro
+// necesita conocer esta subruta (`base`) para generar rutas de build
+// correctas; `site` queda como el origen, sin la subruta.
+//
 // Sitemap generates sitemap-index.xml/sitemap-0.xml automatically from every
 // page emitted at build time — required by the SEO brief and cheaper than
 // maintaining a manual URL list by hand.
 export default defineConfig({
-  output: "static",
-  site: "https://pely93.github.io/nvpc-web",
-  // El repositorio se publica como GitHub Pages de proyecto
-  // (pely93.github.io/nvpc-web/), no en la raíz del dominio, así que Astro
-  // necesita conocer esta subruta para generar rutas de build correctas.
+  site: "https://pely93.github.io",
   base,
   integrations: [tailwind(), sitemap()],
   markdown: {
