@@ -15,14 +15,14 @@ const { title, service, location, clientType, result, href, draft = false } = As
 const resolvedHref = withBase(href);
 ---
 
-<article class="flex flex-col gap-3 rounded-lg border border-border bg-paper p-6">
+<article class="flex flex-col gap-3 rounded-[3px] border border-border bg-paper p-6">
   {draft && (
-    <p class="w-fit rounded-full bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink-soft">
+    <p class="w-fit rounded-[3px] bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink-soft">
       Borrador · pendiente de confirmar
     </p>
   )}
   <p class="text-xs font-semibold uppercase tracking-wide text-brand">{service} · {location}</p>
-  <h3 class="font-heading text-xl font-bold text-ink">
+  <h3 class="font-heading text-xl text-ink">
     <a href={resolvedHref} class="hover:text-brand">{title}</a>
   </h3>
   <p class="text-sm text-ink-soft"><strong class="text-ink">Tipo de cliente:</strong> {clientType}</p>

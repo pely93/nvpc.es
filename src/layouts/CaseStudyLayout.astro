@@ -21,14 +21,14 @@ const canonical = `/casos-de-exito/${entry.slug}/`;
 
   <article class="container-nvpc py-[var(--space-section)]">
     {draft && (
-      <p class="mb-6 w-fit rounded-md border border-accent bg-accent/10 px-4 py-2 text-sm font-semibold text-accent">
+      <p class="mb-6 w-fit rounded-[3px] border border-accent bg-accent-tint px-4 py-2 text-sm font-semibold text-accent">
         Borrador — contenido pendiente de confirmar. Consentimiento de publicación: {consent}.
       </p>
     )}
 
     <header class="max-w-3xl">
       <p class="text-sm font-semibold uppercase tracking-wide text-brand">{service} · {location}</p>
-      <h1 class="mt-2 text-3xl font-bold text-ink sm:text-4xl">{title}</h1>
+      <h1 class="mt-2 text-3xl text-ink sm:text-4xl">{title}</h1>
       <p class="mt-2 text-sm text-ink-soft">
         Tipo de cliente: {clientType} · {date.toLocaleDateString("es-ES", { year: "numeric", month: "long" })}
       </p>
@@ -36,15 +36,15 @@ const canonical = `/casos-de-exito/${entry.slug}/`;
 
     <div class="mt-10 grid max-w-3xl gap-8">
       <section>
-        <h2 class="font-heading text-xl font-bold text-ink">Problema</h2>
+        <h2 class="font-heading text-xl text-ink">Problema</h2>
         <p class="mt-2 text-ink-soft">{problem}</p>
       </section>
       <section>
-        <h2 class="font-heading text-xl font-bold text-ink">Trabajo realizado</h2>
+        <h2 class="font-heading text-xl text-ink">Trabajo realizado</h2>
         <p class="mt-2 text-ink-soft">{work}</p>
       </section>
       <section>
-        <h2 class="font-heading text-xl font-bold text-ink">Resultado</h2>
+        <h2 class="font-heading text-xl text-ink">Resultado</h2>
         <p class="mt-2 text-ink-soft">{result}</p>
       </section>
       <div class="prose prose-slate max-w-none">

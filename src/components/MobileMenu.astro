@@ -8,7 +8,7 @@ import { withBase } from "@/config";
   <button
     id="mobile-menu-button"
     type="button"
-    class="flex h-11 w-11 items-center justify-center rounded-md border border-border text-ink"
+    class="flex h-11 w-11 items-center justify-center rounded-[3px] border border-border text-ink"
     aria-expanded="false"
     aria-controls="mobile-menu"
     aria-label="Abrir menú de navegación"
@@ -26,11 +26,11 @@ import { withBase } from "@/config";
     aria-label="Menú de navegación"
   >
     <div class="container-nvpc flex h-16 items-center justify-between border-b border-border">
-      <span class="font-heading text-lg font-bold text-brand">NVPC</span>
+      <span class="font-heading text-lg font-semibold text-ink">NVPC</span>
       <button
         id="mobile-menu-close"
         type="button"
-        class="flex h-11 w-11 items-center justify-center rounded-md border border-border text-ink"
+        class="flex h-11 w-11 items-center justify-center rounded-[3px] border border-border text-ink"
         aria-label="Cerrar menú de navegación"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -39,7 +39,7 @@ import { withBase } from "@/config";
       </button>
     </div>
     <nav aria-label="Navegación móvil" class="container-nvpc py-6">
-      <ul class="flex flex-col gap-1 text-lg font-medium text-ink">
+      <ul class="divide-y divide-border font-heading text-xl text-ink">
         {
           mainNav.map((item) => (
             <li>
@@ -53,13 +53,13 @@ import { withBase } from "@/config";
       <div class="mt-6 flex flex-col gap-3">
         <a
           href={withBase("/contacto/")}
-          class="flex min-h-[44px] items-center justify-center rounded-md bg-brand px-5 py-3 text-center font-semibold text-white"
+          class="label-caps flex min-h-[44px] items-center justify-center rounded-[3px] bg-brand px-5 py-3 text-center text-xs text-paper"
         >
           Solicitar presupuesto
         </a>
         <a
           href={business.phoneHref}
-          class="flex min-h-[44px] items-center justify-center rounded-md border-2 border-brand px-5 py-3 text-center font-semibold text-brand"
+          class="label-caps flex min-h-[44px] items-center justify-center rounded-[3px] border border-brand px-5 py-3 text-center text-xs text-brand"
         >
           Llamar: {business.phoneDisplay}
         </a>

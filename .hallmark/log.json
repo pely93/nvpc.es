@@ -1,0 +1,13 @@
+[
+  {
+    "date": "2026-08-27",
+    "scope": "app",
+    "macrostructure": "existing IA preserved (redesign of visual layer only)",
+    "theme": "custom (petróleo + cobre, oklch)",
+    "theme_axes": "light paper / roman-serif display / cool-neutral with warm accent",
+    "enrichment": "none",
+    "designed_as_app": true,
+    "design_system": "design.md",
+    "brief": "NVPC · rediseño de la voz visual del sitio corporativo (B2B soporte informático, Sevilla) para que deje de leerse genérico/IA sin volverse llamativo"
+  }
+]

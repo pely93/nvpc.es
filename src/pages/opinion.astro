@@ -11,7 +11,7 @@ import { withBase } from "@/config";
 >
   <section class="container-nvpc py-[var(--space-section)] text-center">
     <div class="mx-auto max-w-xl">
-      <h1 class="text-3xl font-bold text-ink sm:text-4xl">Gracias por confiar en NVPC</h1>
+      <h1 class="text-3xl text-ink sm:text-4xl">Gracias por confiar en NVPC</h1>
       <p class="mt-4 text-lg text-ink-soft">
         Si hemos trabajado contigo, tu opinión nos ayuda a que más empresas y profesionales nos encuentren. Puedes dejar una reseña honesta en Google, cuente lo que cuente.
       </p>
@@ -20,7 +20,7 @@ import { withBase } from "@/config";
         href={business.googleReviewUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="mt-8 inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand px-6 py-3.5 text-base font-semibold text-white hover:bg-brand-dark"
+        class="mt-8 inline-flex min-h-[44px] items-center justify-center rounded-[3px] bg-brand px-6 py-3.5 label-caps text-sm text-paper hover:bg-brand-dark"
       >
         Dejar una reseña en Google
       </a>
@@ -38,8 +38,8 @@ import { withBase } from "@/config";
         </p>
       </div>
 
-      <div class="mt-10 rounded-lg border border-border bg-surface p-6 text-left">
-        <h2 class="font-heading text-lg font-bold text-ink">¿Prefieres llamar o escribir?</h2>
+      <div class="mt-10 rounded-[3px] border border-border bg-surface p-6 text-left">
+        <h2 class="font-heading text-lg text-ink">¿Prefieres llamar o escribir?</h2>
         <ul class="mt-3 space-y-2 text-sm text-ink-soft">
           <li>Teléfono: <a href={business.phoneHref} class="font-semibold text-brand hover:underline">{business.phoneDisplay}</a></li>
           <li>WhatsApp: <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand hover:underline">Enviar mensaje</a></li>
@@ -47,8 +47,8 @@ import { withBase } from "@/config";
         </ul>
       </div>
 
-      <div class="mt-10 rounded-lg border border-dashed border-border p-6 text-left">
-        <h2 class="font-heading text-lg font-bold text-ink">Textos listos para usar</h2>
+      <div class="mt-10 rounded-[3px] border border-dashed border-border p-6 text-left">
+        <h2 class="font-heading text-lg text-ink">Textos listos para usar</h2>
         <p class="mt-3 text-sm font-semibold text-ink">Para tarjeta física:</p>
         <p class="mt-1 text-sm text-ink-soft">
           "Escanea este código o visita nvpc.es/opinion/ para dejarnos tu opinión sobre nuestro servicio."

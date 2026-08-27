@@ -4,6 +4,7 @@ import Footer from "@/components/Footer.astro";
 import SkipLink from "@/components/SkipLink.astro";
 import Seo from "@/components/Seo.astro";
 import { withBase, type SeoData } from "@/config";
+import "@/styles/global.css";
 
 type Props = SeoData & { jsonLd?: Record<string, unknown> | Record<string, unknown>[] };
 
@@ -21,7 +22,7 @@ const jsonLdList = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     {jsonLdList.map((entry) => (

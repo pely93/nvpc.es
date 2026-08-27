@@ -6,53 +6,53 @@ import { withBase } from "@/config";
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-border bg-ink text-white/80">
-  <div class="container-nvpc grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+<footer class="bg-brand-dark text-on-brand-dim">
+  <div class="container-nvpc grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
     <div>
-      <p class="font-heading text-lg font-bold text-white">NVPC</p>
-      <p class="mt-2 text-sm">Networking Virtual PC</p>
-      <p class="mt-4 text-sm">
+      <p class="font-heading text-lg font-semibold text-on-brand">NVPC</p>
+      <p class="mt-1 text-sm text-on-brand-muted">Networking Virtual PC</p>
+      <p class="mt-4 max-w-xs text-sm leading-relaxed">
         Soporte técnico y soluciones informáticas para empresas y profesionales en Sevilla, con servicio remoto para toda España.
       </p>
     </div>
 
-    <nav aria-label="Servicios en el pie de página">
-      <h2 class="font-heading text-sm font-semibold uppercase tracking-wide text-white">Servicios</h2>
+    <nav aria-label="Servicios en el pie de página" class="lg:border-l lg:border-on-brand-rule lg:pl-8">
+      <h2 class="label-caps text-xs text-on-brand-faint">Servicios</h2>
       <ul class="mt-4 space-y-2 text-sm">
         {footerServiceLinks.map((link) => (
-          <li><a href={withBase(link.href)} class="hover:text-white">{link.label}</a></li>
+          <li><a href={withBase(link.href)} class="hover:text-on-brand">{link.label}</a></li>
         ))}
       </ul>
     </nav>
 
-    <nav aria-label="Zonas de servicio en el pie de página">
-      <h2 class="font-heading text-sm font-semibold uppercase tracking-wide text-white">Zonas de servicio</h2>
+    <nav aria-label="Zonas de servicio en el pie de página" class="lg:border-l lg:border-on-brand-rule lg:pl-8">
+      <h2 class="label-caps text-xs text-on-brand-faint">Zonas de servicio</h2>
       <ul class="mt-4 space-y-2 text-sm">
         {footerLocationLinks.map((link) => (
-          <li><a href={withBase(link.href)} class="hover:text-white">{link.label}</a></li>
+          <li><a href={withBase(link.href)} class="hover:text-on-brand">{link.label}</a></li>
         ))}
       </ul>
     </nav>
 
-    <div>
-      <h2 class="font-heading text-sm font-semibold uppercase tracking-wide text-white">Contacto</h2>
+    <div class="lg:border-l lg:border-on-brand-rule lg:pl-8">
+      <h2 class="label-caps text-xs text-on-brand-faint">Contacto</h2>
       <ul class="mt-4 space-y-2 text-sm">
-        <li><a href={business.phoneHref} class="hover:text-white">{business.phoneDisplay}</a></li>
-        <li><a href={`mailto:${business.email}`} class="hover:text-white">{business.email}</a></li>
+        <li><a href={business.phoneHref} class="hover:text-on-brand">{business.phoneDisplay}</a></li>
+        <li><a href={`mailto:${business.email}`} class="hover:text-on-brand">{business.email}</a></li>
         <li>{business.schedule}</li>
         <li>{business.areaPrimary}</li>
-        <li><a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white">WhatsApp</a></li>
+        <li><a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="hover:text-on-brand">WhatsApp</a></li>
       </ul>
     </div>
   </div>
 
-  <div class="border-t border-white/10 py-6">
-    <div class="container-nvpc flex flex-col gap-2 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
+  <div class="border-t border-on-brand-rule py-6">
+    <div class="container-nvpc flex flex-col gap-2 text-xs text-on-brand-faint sm:flex-row sm:items-center sm:justify-between">
       <p>&copy; {year} NVPC · Networking Virtual PC. Todos los derechos reservados.</p>
       <div class="flex gap-4">
-        <a href={withBase("/sobre-nvpc/")} class="hover:text-white">Sobre NVPC</a>
-        <a href={withBase("/opinion/")} class="hover:text-white">Opinión</a>
-        <a href={withBase("/contacto/")} class="hover:text-white">Contacto</a>
+        <a href={withBase("/sobre-nvpc/")} class="hover:text-on-brand">Sobre NVPC</a>
+        <a href={withBase("/opinion/")} class="hover:text-on-brand">Opinión</a>
+        <a href={withBase("/contacto/")} class="hover:text-on-brand">Contacto</a>
       </div>
     </div>
   </div>
