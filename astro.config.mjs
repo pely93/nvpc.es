@@ -6,6 +6,6 @@ import sitemap from "@astrojs/sitemap";
 // page emitted at build time — required by the SEO brief and cheaper than
 // maintaining a manual URL list by hand.
 export default defineConfig({
-  site: "https://nvpc.es",
+  site:  'https://pely93.github.io/nvpc-web',
   integrations: [tailwind(), sitemap()],
 });
