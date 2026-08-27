@@ -1,6 +1,7 @@
 ---
 import { mainNav } from "@/data/navigation";
 import { business } from "@/data/business";
+import { withBase } from "@/config";
 import PrimaryButton from "@/components/PrimaryButton.astro";
 import MobileMenu from "@/components/MobileMenu.astro";
 
@@ -9,7 +10,7 @@ const currentPath = Astro.url.pathname;
 
 <header class="sticky top-0 z-50 border-b border-border bg-paper/95 backdrop-blur">
   <div class="container-nvpc flex h-16 items-center justify-between gap-4 sm:h-20">
-    <a href="/" class="flex items-center gap-2 font-heading text-lg font-bold text-brand">
+    <a href={withBase("/")} class="flex items-center gap-2 font-heading text-lg font-bold text-brand">
       <span class="flex h-9 w-9 items-center justify-center rounded-md bg-brand text-sm font-bold text-white" aria-hidden="true">
         NV
       </span>
@@ -22,8 +23,8 @@ const currentPath = Astro.url.pathname;
           mainNav.map((item) => (
             <li>
               <a
-                href={item.href}
-                aria-current={currentPath.startsWith(item.href) ? "page" : undefined}
+                href={withBase(item.href)}
+                aria-current={currentPath.startsWith(withBase(item.href)) ? "page" : undefined}
                 class="hover:text-brand aria-[current=page]:text-brand"
               >
                 {item.label}

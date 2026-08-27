@@ -1,4 +1,6 @@
 ---
+import { withBase } from "@/config";
+
 type Props = {
   title: string;
   problem: string;
@@ -9,6 +11,7 @@ type Props = {
 };
 
 const { title, problem, solution, benefit, href, featured = false } = Astro.props;
+const resolvedHref = withBase(href);
 ---
 
 <article
@@ -17,7 +20,7 @@ const { title, problem, solution, benefit, href, featured = false } = Astro.prop
   }`}
 >
   <h3 class={`font-heading font-bold ${featured ? "text-2xl" : "text-xl"} text-ink`}>
-    <a href={href} class="hover:text-brand">{title}</a>
+    <a href={resolvedHref} class="hover:text-brand">{title}</a>
   </h3>
   <dl class="grid gap-2 text-sm text-ink-soft">
     <div>
@@ -33,7 +36,7 @@ const { title, problem, solution, benefit, href, featured = false } = Astro.prop
       <dd>{benefit}</dd>
     </div>
   </dl>
-  <a href={href} class="mt-2 inline-flex items-center gap-1 font-semibold text-brand hover:underline">
+  <a href={resolvedHref} class="mt-2 inline-flex items-center gap-1 font-semibold text-brand hover:underline">
     Ver servicio
     <span aria-hidden="true">→</span>
   </a>

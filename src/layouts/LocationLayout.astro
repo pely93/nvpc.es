@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import FAQ from "@/components/FAQ.astro";
 import ContactCTA from "@/components/ContactCTA.astro";
-import { siteUrl } from "@/config";
+import { siteUrl, withBase } from "@/config";
 import type { CollectionEntry } from "astro:content";
 
 type Props = { entry: CollectionEntry<"locations"> };
@@ -81,8 +81,8 @@ const jsonLd = [
       )}
 
       <p>
-        Este servicio se combina con nuestras <a href="/tarifas/">tarifas planas de mantenimiento</a> y con la
-        página general de <a href={`/servicios/${relatedService}/`}>{relatedService.replace(/-/g, " ")}</a>.
+        Este servicio se combina con nuestras <a href={withBase("/tarifas/")}>tarifas planas de mantenimiento</a> y con la
+        página general de <a href={withBase(`/servicios/${relatedService}/`)}>{relatedService.replace(/-/g, " ")}</a>.
       </p>
     </div>
 

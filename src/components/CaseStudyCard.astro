@@ -1,4 +1,6 @@
 ---
+import { withBase } from "@/config";
+
 type Props = {
   title: string;
   service: string;
@@ -10,6 +12,7 @@ type Props = {
 };
 
 const { title, service, location, clientType, result, href, draft = false } = Astro.props;
+const resolvedHref = withBase(href);
 ---
 
 <article class="flex flex-col gap-3 rounded-lg border border-border bg-paper p-6">
@@ -20,11 +23,11 @@ const { title, service, location, clientType, result, href, draft = false } = As
   )}
   <p class="text-xs font-semibold uppercase tracking-wide text-brand">{service} · {location}</p>
   <h3 class="font-heading text-xl font-bold text-ink">
-    <a href={href} class="hover:text-brand">{title}</a>
+    <a href={resolvedHref} class="hover:text-brand">{title}</a>
   </h3>
   <p class="text-sm text-ink-soft"><strong class="text-ink">Tipo de cliente:</strong> {clientType}</p>
   <p class="text-sm text-ink-soft"><strong class="text-ink">Resultado:</strong> {result}</p>
-  <a href={href} class="mt-1 inline-flex items-center gap-1 font-semibold text-brand hover:underline">
+  <a href={resolvedHref} class="mt-1 inline-flex items-center gap-1 font-semibold text-brand hover:underline">
     Ver caso
     <span aria-hidden="true">→</span>
   </a>

@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import FAQ from "@/components/FAQ.astro";
 import ContactCTA from "@/components/ContactCTA.astro";
-import { siteUrl } from "@/config";
+import { siteUrl, withBase } from "@/config";
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
@@ -94,7 +94,7 @@ const jsonLd = [
           Cuéntanos tu caso y te proponemos una solución concreta, sin compromisos.
         </p>
         <a
-          href="/contacto/"
+          href={withBase("/contacto/")}
           class="mt-4 flex min-h-[44px] items-center justify-center rounded-md bg-brand px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark"
         >
           Solicitar presupuesto
@@ -107,7 +107,7 @@ const jsonLd = [
             <ul class="mt-2 space-y-2 text-sm">
               {relatedServices.map((slug) => (
                 <li>
-                  <a href={`/servicios/${slug}/`} class="text-brand hover:underline">
+                  <a href={withBase(`/servicios/${slug}/`)} class="text-brand hover:underline">
                     {slug.replace(/-/g, " ")}
                   </a>
                 </li>
