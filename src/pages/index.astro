@@ -6,6 +6,7 @@ import TrustBar from "@/components/TrustBar.astro";
 import ServiceCard from "@/components/ServiceCard.astro";
 import ProcessSteps from "@/components/ProcessSteps.astro";
 import ContactCTA from "@/components/ContactCTA.astro";
+import ClientLogos from "@/components/ClientLogos.astro";
 import ReviewCTA from "@/components/ReviewCTA.astro";
 import { business } from "@/data/business";
 import { siteUrl, withBase } from "@/config";
@@ -33,13 +34,13 @@ const jsonLd = {
   telephone: "+34667200016",
   email: business.email,
   url: siteUrl,
-  areaServed: ["Sevilla", "España"],
+  areaServed: business.coverage,
   openingHours: "Mo-Fr 09:30-17:30",
 };
 ---
 
 <BaseLayout
-  title="Soporte informático para empresas en Sevilla"
+  title="Soporte informático para empresas en Andalucía"
   description="Mantenimiento, redes y soluciones tecnológicas para que tu negocio trabaje sin interrupciones. Soporte remoto y presencial para empresas y profesionales."
   canonical="/"
   jsonLd={jsonLd}
@@ -55,7 +56,7 @@ const jsonLd = {
     <div class="container-nvpc relative grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
       <div>
         <h1 class="text-4xl leading-[1.1] text-ink sm:text-5xl">
-          Soporte informático para empresas en Sevilla
+          Soporte informático para empresas en Andalucía
         </h1>
         <p class="mt-5 max-w-md text-lg text-ink-soft">
           Mantenimiento, redes y soluciones tecnológicas para que tu negocio trabaje sin interrupciones.
@@ -75,7 +76,7 @@ const jsonLd = {
         <p class="label-caps text-xs text-ink-faint">Horario de atención</p>
         <p class="mt-1 font-heading text-lg text-ink">{business.schedule}</p>
         <p class="mt-5 label-caps text-xs text-ink-faint">Zona de trabajo</p>
-        <p class="mt-1 font-heading text-lg text-ink">{business.areaPrimary}. {business.areaSecondary}.</p>
+        <p class="mt-1 font-heading text-lg text-ink">{business.coverage}</p>
       </div>
     </div>
   </section>
@@ -155,10 +156,7 @@ const jsonLd = {
   </section>
 
   <section class="container-nvpc py-[var(--space-section)]">
-    <h2 class="text-2xl text-ink sm:text-3xl">Confianza</h2>
-    <p class="mt-3 max-w-2xl text-ink-soft">
-      Puedes consultar nuestros <a href={withBase("/casos-de-exito/")} class="text-brand hover:underline">casos de trabajo</a> y dejarnos tu opinión si ya has trabajado con nosotros.
-    </p>
+    <ClientLogos />
     <div class="mt-6 max-w-xl">
       <ReviewCTA />
     </div>

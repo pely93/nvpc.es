@@ -1,7 +1,7 @@
 ---
 title: "Diseño web y tiendas online"
 shortTitle: "Diseño web"
-description: "Diseño de webs corporativas y tiendas online responsive, con mantenimiento y SEO técnico básico incluido en el proceso."
+description: "Webs corporativas y tiendas online con alcance y presupuesto definidos. Mantenimiento, alojamiento y servicios adicionales según propuesta."
 category: "presencia-digital"
 order: 7
 problem: "Muchas empresas no tienen presencia web, o tienen una web anticuada, lenta o que no se ve bien en el móvil, lo que dificulta que los clientes las encuentren o confíen en ellas."
@@ -10,11 +10,11 @@ audience:
   - "Negocios que quieren vender online"
   - "Empresas con una web antigua que necesita renovarse"
 includes:
-  - "Diseño de web corporativa o tienda online"
-  - "Diseño responsive, adaptado a móvil"
-  - "SEO técnico básico (estructura, velocidad, metadatos)"
-  - "Mantenimiento posterior de la web"
-  - "Integración con herramientas de gestión o contacto"
+  - "Definición del alcance y necesidades de la web"
+  - "Diseño adaptado a móvil y escritorio"
+  - "Revisión del proyecto antes de publicarlo"
+  - "Contenidos, alojamiento e integraciones según presupuesto"
+  - "Mantenimiento posterior disponible según propuesta"
 benefits:
   - "Una web que representa bien a tu negocio"
   - "Mejor experiencia para tus clientes en móvil y escritorio"
@@ -27,16 +27,14 @@ faq:
   - question: "¿Podéis mantener una web que ya tengo?"
     answer: "Sí, ofrecemos mantenimiento de webs existentes, según su estado y la plataforma sobre la que estén construidas."
   - question: "¿Hacéis SEO avanzado o solo la parte técnica?"
-    answer: "Incluimos SEO técnico básico (estructura, velocidad, metadatos). Estrategias de contenido o SEO avanzado se valoran como un proyecto aparte."
+    answer: "La propuesta detalla el trabajo técnico y de posicionamiento incluido. No garantizamos posiciones concretas en buscadores."
 relatedServices:
   - "consultoria-tecnologica"
   - "mantenimiento-informatico"
 ---
 
-Tu web es a menudo el primer contacto de un cliente potencial con tu negocio. Si es lenta, no se ve bien en el móvil o no transmite confianza, ese primer contacto se pierde.
-
-NVPC diseña webs corporativas y tiendas online pensadas para representar bien tu negocio y funcionar correctamente en cualquier dispositivo, con una base técnica sólida para el posicionamiento en buscadores.
+Desarrollamos webs corporativas y tiendas online adaptadas a las necesidades de cada negocio. Definimos el alcance, los contenidos y el presupuesto antes de comenzar, y revisamos contigo el proyecto antes de publicarlo.
 
 ## Cómo se trabaja
 
-Analizamos qué necesita tu negocio (web corporativa, tienda online, renovación de una web existente), definimos el alcance y el presupuesto, y desarrollamos el proyecto con revisiones contigo antes de publicarlo.
+Coordinamos el proyecto en remoto y acordamos las revisiones necesarias. Dominio, alojamiento, fotografías, textos, integraciones y posicionamiento se detallan en cada presupuesto. El mantenimiento y soporte posterior están disponibles según propuesta.

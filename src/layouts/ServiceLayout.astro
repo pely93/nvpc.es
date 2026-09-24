@@ -1,4 +1,5 @@
 ---
+import { business } from "@/data/business";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import FAQ from "@/components/FAQ.astro";
@@ -28,7 +29,7 @@ const jsonLd = [
       telephone: "+34667200016",
       url: siteUrl,
     },
-    areaServed: "Sevilla y provincia; servicio remoto en toda España",
+    areaServed: business.coverage,
   },
   {
     "@context": "https://schema.org",
@@ -86,6 +87,7 @@ const jsonLd = [
 
         <h2>Qué parte requiere visita</h2>
         <p>{onSiteWork}</p>
+        <p>{business.coverage} {business.appointment}</p>
       </div>
 
       <aside class="rounded-[3px] border border-border bg-surface p-6 h-fit">

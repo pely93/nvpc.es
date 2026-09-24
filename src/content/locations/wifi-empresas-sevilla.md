@@ -15,7 +15,7 @@ includes:
   - "Ajustes de rendimiento y seguridad"
 coverageAreas:
   - "Sevilla capital"
-  - "Área metropolitana de Sevilla"
+  - "Toda la provincia de Sevilla"
 faq:
   - question: "¿Puedo ofrecer WiFi a mis clientes de forma segura?"
     answer: "Sí, configuramos una red de invitados separada de tu red interna, con acceso controlado."

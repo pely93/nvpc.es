@@ -3,6 +3,7 @@ title: "Cómo detectar problemas de WiFi en una oficina"
 description: "Señales habituales de una red WiFi mal dimensionada en una oficina y cómo diagnosticarlas antes de cambiar de equipos."
 category: "redes-wifi"
 date: 2026-02-17
+updatedDate: 2026-09-24
 ---
 
 Antes de decidir cambiar de router o contratar más ancho de banda, conviene identificar si el problema es realmente de velocidad o de cobertura y configuración.

@@ -1,6 +1,3 @@
-// Datos únicos de la empresa. Cambia aquí y se propaga a toda la web
-// (cabecera, pie, JSON-LD, botones de contacto, página de opinión, etc.).
-
 export const business = {
   name: "NVPC · Networking Virtual PC",
   shortName: "NVPC",
@@ -10,21 +7,16 @@ export const business = {
   email: "info@nvpc.es",
   whatsappNumber: "34667200016",
   whatsappDefaultMessage: "Hola, quiero información sobre los servicios informáticos de NVPC.",
-  get whatsappUrl() {
-    return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(this.whatsappDefaultMessage)}`;
-  },
+  get whatsappUrl() { return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(this.whatsappDefaultMessage)}`; },
   schedule: "Lunes a viernes, de 9:30 a 17:30",
   scheduleShort: "L-V 9:30-17:30",
-  areaPrimary: "Sevilla y provincia",
-  areaSecondary: "Servicio remoto en toda España",
+  areaPrimary: "Sevilla, Huelva, Cádiz, Córdoba y Málaga",
+  areaSecondary: "Soporte remoto en el resto de Andalucía y España",
+  coverage: "Servicio presencial en Sevilla, Huelva, Cádiz, Córdoba y Málaga, y soporte remoto en el resto de Andalucía y España.",
+  onSiteProvinces: ["Sevilla", "Huelva", "Cádiz", "Córdoba", "Málaga"],
+  appointment: "Atención presencial con cita previa. Las condiciones de desplazamiento se comunican antes de la intervención.",
+  location: "Parque Empresarial Nuevo Torneo, Sevilla, 41015",
   addressLocality: "Sevilla",
   addressRegion: "Andalucía",
   addressCountry: "ES",
-  // Sin dirección física pública confirmada: no se declara en JSON-LD hasta validarla.
-  streetAddress: "[PENDIENTE DE CONFIRMAR]",
-  postalCode: "[PENDIENTE DE CONFIRMAR]",
-  googleReviewUrl: "[GOOGLE_REVIEW_URL_PENDIENTE]",
-  googleReviewQrUrl: "[GOOGLE_REVIEW_QR_PENDIENTE]",
-  googleBusinessProfileUrl: "[GOOGLE_BUSINESS_PROFILE_URL_PENDIENTE]",
-  foundingYear: "[PENDIENTE DE CONFIRMAR]",
 } as const;

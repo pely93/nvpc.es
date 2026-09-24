@@ -1,144 +1,88 @@
-export type PricingFeature = {
-  label: string;
-  included: boolean | string;
-};
-
-export type PricingPlan = {
-  id: "esencial" | "empresa" | "integral";
-  name: string;
-  audience: string;
-  priceNote: string;
-  description: string;
-  includes: string[];
-  excludes: string[];
-  features: PricingFeature[];
-  ctaLabel: string;
-  highlighted?: boolean;
-};
-
-// Precios no publicados: no hay cifras confirmadas. Cada plan enlaza a /contacto/
-// para una propuesta a medida, tal y como exige el briefing comercial.
+export type PricingFeature = { label: string; included: boolean | string };
+export type PricingPlan = { id: "esencial" | "empresa" | "integral"; name: string; audience: string; priceNote: string; description: string; includes: string[]; excludes: string[]; features: PricingFeature[]; ctaLabel: string; highlighted?: boolean };
 export const pricingPlans: PricingPlan[] = [
   {
-    id: "esencial",
-    name: "Plan Esencial",
-    audience: "Autónomos y negocios pequeños",
-    priceNote: "Desde [PRECIO PENDIENTE DE CONFIRMAR] €/mes",
-    description:
-      "Mantenimiento básico para quien depende de pocos equipos y necesita que sigan funcionando sin sorpresas.",
-    includes: [
-      "Número de equipos: [PENDIENTE DE CONFIRMAR]",
+    "id": "esencial",
+    "name": "Plan Esencial",
+    "audience": "Autónomos y pequeños negocios",
+    "priceNote": "Desde 91,75 € IVA incluido/mes",
+    "description": "La cuota final se calcula según el parque informático y el alcance del servicio.",
+    "includes": [
+      "Mantenimiento preventivo",
       "Soporte remoto en horario comercial",
-      "Revisiones preventivas periódicas",
-      "Gestión de incidencias de software",
-      "Copias de seguridad básicas, si aplica",
+      "Revisión periódica de equipos",
+      "Atención de incidencias según las condiciones contratadas"
     ],
-    excludes: [
-      "Visitas presenciales recurrentes (se presupuestan aparte)",
-      "Gestión de servidores",
-      "Infraestructura de red avanzada",
+    "excludes": [
+      "Visitas presenciales: se presupuestan aparte",
+      "Servidores e infraestructura de red avanzada",
+      "Proyectos y servicios específicos fuera del alcance"
     ],
-    features: [
-      { label: "Equipos incluidos", included: "[PENDIENTE DE CONFIRMAR]" },
-      { label: "Soporte remoto", included: true },
-      { label: "Soporte presencial", included: "Bajo presupuesto" },
-      { label: "Revisiones preventivas", included: true },
-      { label: "Copias de seguridad", included: "Según necesidad" },
-      { label: "Gestión de red", included: false },
-      { label: "Consultoría tecnológica", included: false },
-    ],
-    ctaLabel: "Solicitar propuesta",
+    "features": [],
+    "ctaLabel": "Solicitar propuesta"
   },
   {
-    id: "empresa",
-    name: "Plan Empresa",
-    audience: "Pequeñas y medianas empresas",
-    priceNote: "Desde [PRECIO PENDIENTE DE CONFIRMAR] €/mes",
-    description:
-      "Para empresas con varios puestos de trabajo que necesitan soporte remoto y presencial combinado y una red estable.",
-    includes: [
-      "Número de puestos: [PENDIENTE DE CONFIRMAR]",
-      "Servidores o dispositivos incluidos: [PENDIENTE DE CONFIRMAR]",
-      "Soporte remoto y presencial",
-      "Revisión periódica de equipos y red",
-      "Gestión de red LAN/WiFi",
-      "Copias de seguridad gestionadas",
+    "id": "empresa",
+    "name": "Plan Empresa",
+    "audience": "Empresas con puestos, servidores y red",
+    "priceNote": "Presupuesto personalizado",
+    "description": "Definimos una cuota mensual según los equipos, la infraestructura y el soporte que necesita tu empresa.",
+    "includes": [
+      "Mantenimiento preventivo y correctivo según propuesta",
+      "Soporte remoto y visitas concertadas según contratación",
+      "Equipos, servidores y red definidos en la propuesta",
+      "Copias de seguridad cuando estén contratadas"
     ],
-    excludes: [
-      "Proyectos de infraestructura nueva (cableado, ampliaciones)",
-      "Consultoría estratégica extensa",
+    "excludes": [
+      "Proyectos nuevos y ampliaciones fuera de contrato",
+      "Equipos, licencias y trabajos no incluidos en la propuesta"
     ],
-    features: [
-      { label: "Puestos incluidos", included: "[PENDIENTE DE CONFIRMAR]" },
-      { label: "Soporte remoto", included: true },
-      { label: "Soporte presencial", included: true },
-      { label: "Revisiones preventivas", included: true },
-      { label: "Copias de seguridad", included: true },
-      { label: "Gestión de red", included: true },
-      { label: "Consultoría tecnológica", included: "Puntual" },
-    ],
-    ctaLabel: "Solicitar propuesta",
-    highlighted: true,
+    "features": [],
+    "ctaLabel": "Solicitar propuesta"
   },
   {
-    id: "integral",
-    name: "Plan Integral",
-    audience: "Empresas que externalizan su IT",
-    priceNote: "Solicitar propuesta personalizada",
-    description:
-      "Cobertura amplia de puestos, infraestructura, redes y seguridad para empresas que quieren un único interlocutor tecnológico.",
-    includes: [
-      "Puestos incluidos: [PENDIENTE DE CONFIRMAR]",
-      "Infraestructura y servidores: [PENDIENTE DE CONFIRMAR]",
-      "Gestión de redes",
-      "Seguridad informática y copias de seguridad",
-      "Consultoría tecnológica continua",
-      "Soporte prioritario, solo si se confirma",
+    "id": "integral",
+    "name": "Plan Integral",
+    "audience": "Empresas que coordinan su infraestructura IT",
+    "priceNote": "Presupuesto personalizado",
+    "description": "Una propuesta que reúne los servicios tecnológicos que necesita tu negocio, con el alcance definido antes de contratar.",
+    "includes": [
+      "Mantenimiento de infraestructura según propuesta",
+      "Soporte de redes, equipos y servidores acordados",
+      "Seguridad, copias y servicios cloud según contratación",
+      "Microsoft 365 y asesoramiento cuando se incluyan"
     ],
-    excludes: [
-      "Desarrollo de software a medida de gran escala",
-      "Servicios no incluidos en el alcance acordado por contrato",
+    "excludes": [
+      "Servicios no incluidos en el alcance acordado",
+      "Proyectos y ampliaciones presupuestados por separado"
     ],
-    features: [
-      { label: "Puestos incluidos", included: "[PENDIENTE DE CONFIRMAR]" },
-      { label: "Soporte remoto", included: true },
-      { label: "Soporte presencial", included: true },
-      { label: "Revisiones preventivas", included: true },
-      { label: "Copias de seguridad", included: true },
-      { label: "Gestión de red", included: true },
-      { label: "Consultoría tecnológica", included: true },
-    ],
-    ctaLabel: "Solicitar propuesta",
-  },
+    "features": [],
+    "ctaLabel": "Definir mi propuesta"
+  }
 ];
-
 export const pricingFaq = [
   {
-    question: "¿Hay permanencia?",
-    answer: "[PENDIENTE DE CONFIRMAR]. Las condiciones de permanencia se detallan en la propuesta comercial antes de firmar.",
+    "question": "¿Cómo se calcula la cuota mensual?",
+    "answer": "Según el número de equipos, los servidores, la infraestructura y las necesidades de soporte. La propuesta detalla los servicios incluidos y las condiciones aplicables."
   },
   {
-    question: "¿Qué ocurre si necesito una visita?",
-    answer:
-      "Las visitas presenciales se acuerdan según el plan contratado. Si tu plan no las incluye o superan lo previsto, se presupuestan de forma independiente antes de realizarse.",
+    "question": "¿Hay permanencia?",
+    "answer": "La duración del servicio y las condiciones de renovación y baja se detallan en la propuesta comercial antes de contratar."
   },
   {
-    question: "¿El soporte remoto está incluido?",
-    answer: "El soporte remoto está incluido en los tres planes, dentro del horario comercial de NVPC.",
+    "question": "¿Qué ocurre si necesito una visita?",
+    "answer": "Las visitas se conciertan previamente. Las condiciones de desplazamiento y los trabajos no incluidos en la cuota se comunican antes de la intervención."
   },
   {
-    question: "¿Se pueden añadir equipos?",
-    answer:
-      "Sí. Cada tarifa se recalcula cuando cambia el número de equipos o puestos de trabajo. Contacta con nosotros para actualizar tu plan.",
+    "question": "¿En qué horario se atienden las incidencias?",
+    "answer": "De lunes a viernes, de 9:30 a 17:30. Los compromisos de atención se establecen en cada propuesta."
   },
   {
-    question: "¿Qué ocurre fuera del alcance del plan?",
-    answer:
-      "Cualquier trabajo fuera del alcance contratado (proyectos nuevos, ampliaciones, incidencias excepcionales) se presupuesta de forma independiente antes de ejecutarse.",
+    "question": "¿Se pueden añadir equipos?",
+    "answer": "Revisamos el alcance y la cuota cuando cambia tu infraestructura."
   },
   {
-    question: "¿Cómo se calcula la cuota mensual?",
-    answer:
-      "La cuota se calcula según el número de equipos, la complejidad de la infraestructura, las necesidades de soporte y si se requiere cobertura presencial habitual.",
-  },
+    "question": "¿Qué ocurre fuera del alcance del plan?",
+    "answer": "Los proyectos, ampliaciones y trabajos adicionales se presupuestan por separado cuando no estén incluidos en el contrato."
+  }
 ];

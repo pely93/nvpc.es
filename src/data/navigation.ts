@@ -7,7 +7,7 @@ export const mainNav: NavItem[] = [
   { label: "Servicios", href: "/servicios/" },
   { label: "Tarifas planas", href: "/tarifas/" },
   { label: "Zonas de servicio", href: "/zonas/" },
-  { label: "Casos de éxito", href: "/casos-de-exito/" },
+  { label: "Clientes", href: "/clientes/" },
   { label: "Sobre NVPC", href: "/sobre-nvpc/" },
   { label: "Blog", href: "/blog/" },
   { label: "Contacto", href: "/contacto/" },

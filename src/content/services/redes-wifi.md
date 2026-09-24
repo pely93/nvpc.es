@@ -1,7 +1,7 @@
 ---
 title: "Redes y WiFi para empresas"
 shortTitle: "Redes y WiFi"
-description: "Instalación, diagnóstico y mantenimiento de redes LAN y WiFi para oficinas, comercios y empresas en Sevilla."
+description: "Instalación, auditoría y mantenimiento de redes LAN y WiFi para empresas, con atención presencial en cinco provincias andaluzas."
 category: "redes-infraestructura"
 order: 3
 problem: "Cortes de conexión, zonas sin cobertura o redes lentas afectan a la productividad y a la atención al cliente en el día a día."
@@ -17,9 +17,9 @@ includes:
   - "Separación de redes (invitados, oficina, dispositivos internos)"
   - "Mantenimiento y ajustes periódicos"
 benefits:
-  - "Cobertura estable en todas las zonas de trabajo"
-  - "Menos cortes y menos incidencias relacionadas con la red"
-  - "Una red más segura, con acceso separado para visitas y equipos internos"
+  - "Una instalación ajustada al espacio y al uso de la red"
+  - "Diagnóstico de los problemas de cobertura y conectividad"
+  - "Separación de redes según las necesidades del negocio"
 remoteWork: "El diagnóstico inicial y buena parte de la configuración de equipos de red puede hacerse en remoto."
 onSiteWork: "La instalación de cableado, puntos de acceso y equipos de red requiere siempre visita presencial."
 faq:
@@ -33,12 +33,13 @@ relatedServices:
   - "mantenimiento-informatico"
   - "seguridad-informatica"
   - "soporte-informatico"
+  - "telecomunicaciones"
 ---
 
-Una red que falla no solo es una molestia técnica: significa clientes esperando, empleados sin poder trabajar y, en algunos negocios, ventas que no se pueden cerrar.
-
-NVPC diagnostica el estado real de tu red —cableada e inalámbrica— y propone una solución concreta, ya sea reforzar la cobertura, separar redes o renovar la infraestructura.
+Diseñamos, instalamos y mantenemos redes LAN y WiFi para empresas. Revisamos la conectividad, la cobertura y la configuración para proponer mejoras ajustadas a cada instalación.
 
 ## Cómo se trabaja
 
-Empezamos con un diagnóstico de cobertura y rendimiento en tus instalaciones. A partir de ahí, proponemos una solución ajustada al tamaño del local o la oficina, la instalamos y dejamos la red bajo mantenimiento si así lo necesitas.
+Estudiamos el espacio, los dispositivos y el uso previsto. El proyecto puede incluir cableado, puntos de acceso, configuración y separación de redes. El mantenimiento posterior se define en la propuesta.
+
+También valoramos soluciones de fibra, 4G/5G y otras alternativas de conectividad según las necesidades del emplazamiento.

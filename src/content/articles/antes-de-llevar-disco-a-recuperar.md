@@ -3,6 +3,7 @@ title: "Qué hacer antes de llevar un disco a recuperar"
 description: "Pasos recomendados cuando un disco duro o SSD deja de funcionar, antes de acudir a un servicio de recuperación de datos."
 category: "recuperacion-datos"
 date: 2026-02-24
+updatedDate: 2026-09-24
 ---
 
 Cuando un disco duro o un SSD deja de responder, la reacción habitual es intentar encenderlo varias veces o probarlo en otro equipo. En muchos casos, esto reduce las posibilidades de recuperar la información.
@@ -20,3 +21,5 @@ Cuando un disco duro o un SSD deja de responder, la reacción habitual es intent
 3. Contacta con un servicio de diagnóstico antes de intentar nada más.
 
 Puedes consultar cómo trabajamos este tipo de casos en nuestra página de [recuperación de datos](/servicios/recuperacion-datos/).
+
+Contacta antes de entregar o enviar el dispositivo. Te indicaremos el procedimiento y las condiciones de recepción.

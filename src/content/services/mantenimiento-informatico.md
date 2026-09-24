@@ -4,23 +4,23 @@ shortTitle: "Mantenimiento informático"
 description: "Mantenimiento informático mensual para empresas y profesionales: revisiones preventivas, soporte remoto y presencial, y gestión de incidencias."
 category: "soporte-mantenimiento"
 order: 1
-problem: "Los equipos fallan sin avisar, las incidencias se acumulan y cada parón de un ordenador o de la red frena el trabajo del día."
+problem: "El mantenimiento preventivo y correctivo ayuda a cuidar los equipos, atender incidencias y mantener los sistemas de tu empresa."
 audience:
   - "Oficinas y despachos con varios puestos de trabajo"
   - "Comercios que dependen de TPV, catálogo o gestión digital"
   - "Autónomos que no pueden perder tiempo resolviendo problemas técnicos"
   - "Empresas que quieren anticiparse a las averías en lugar de reaccionar"
 includes:
-  - "Revisión periódica de equipos, sistemas y actualizaciones"
-  - "Soporte técnico remoto y presencial según el plan contratado"
-  - "Gestión de incidencias de hardware, software y red"
-  - "Seguimiento del estado de copias de seguridad"
-  - "Recomendaciones sobre renovación o mejora de equipos"
+  - "Revisión periódica, actualizaciones y puesta a punto de equipos"
+  - "Atención de incidencias y soporte según el contrato"
+  - "Supervisión del estado de los sistemas y redes"
+  - "Servidores e infraestructura cuando estén incluidos"
+  - "Copias de seguridad y revisión de respaldos según contratación"
+  - "Asesoramiento para la renovación de equipos"
 benefits:
-  - "Menos interrupciones en el día a día del negocio"
-  - "Incidencias detectadas antes de que se conviertan en un problema mayor"
-  - "Un único interlocutor técnico para todo lo relacionado con tus equipos"
-  - "Presupuesto mensual estable, sin sorpresas por avería puntual"
+  - "Planificación del mantenimiento según tu infraestructura"
+  - "Seguimiento técnico de los equipos y sistemas contratados"
+  - "Una propuesta con alcance y condiciones definidos"
 remoteWork: "La mayoría de incidencias de software, configuración y rendimiento se resuelven en remoto, sin necesidad de desplazamiento."
 onSiteWork: "Las averías de hardware, instalaciones nuevas o revisiones de infraestructura física requieren visita presencial, según el plan contratado."
 faq:
@@ -36,10 +36,8 @@ relatedServices:
   - "seguridad-informatica"
 ---
 
-Un ordenador que se cuelga, una actualización que rompe un programa de gestión o una impresora que deja de funcionar en pleno cierre de mes: son incidencias pequeñas que, sumadas, terminan restando horas de trabajo cada semana.
-
-El mantenimiento informático de NVPC está pensado para que estos problemas se detecten y resuelvan antes de que afecten al negocio, con una tarifa mensual clara en lugar de facturas sueltas cada vez que algo falla.
+El mantenimiento informático de NVPC combina revisiones preventivas, atención de incidencias y soporte adaptado a tus equipos y sistemas. Puedes contratar una cuota mensual según las necesidades del negocio.
 
 ## Cómo se trabaja
 
-Empezamos con una revisión del estado de tus equipos y de tu infraestructura actual. A partir de ahí, definimos un plan de mantenimiento adaptado al tamaño de tu empresa y al número de equipos, con revisiones periódicas y soporte disponible en el horario comercial de NVPC.
+Revisamos tu situación y definimos los equipos cubiertos, la periodicidad de las revisiones y el soporte contratado. Las visitas se conciertan previamente. Las piezas, licencias, ampliaciones y trabajos que no estén incluidos en la propuesta se presupuestan por separado.

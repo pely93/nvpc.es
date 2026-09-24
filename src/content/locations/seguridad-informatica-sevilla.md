@@ -15,10 +15,10 @@ includes:
   - "Recomendaciones priorizadas por riesgo"
 coverageAreas:
   - "Sevilla capital"
-  - "Área metropolitana de Sevilla"
+  - "Toda la provincia de Sevilla"
 faq:
   - question: "¿Es un servicio de ciberseguridad avanzada?"
-    answer: "No. Es un servicio de seguridad informática orientado a pymes y autónomos: accesos, contraseñas, actualizaciones y copias de seguridad."
+    answer: "El alcance se define después de revisar tus necesidades. La propuesta detalla las herramientas, licencias y servicios incluidos."
   - question: "¿Puedo empezar solo con las copias de seguridad?"
     answer: "Sí, puedes priorizar las medidas que más te interesen y ampliar después."
   - question: "¿Revisáis empresas que ya tienen otro proveedor de IT?"

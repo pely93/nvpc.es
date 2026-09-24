@@ -17,9 +17,9 @@ includes:
   - "Configuración y reparación de equipos y periféricos"
   - "Recomendaciones para evitar que el problema se repita"
 benefits:
-  - "Vuelta al trabajo lo antes posible"
-  - "Explicación clara de qué ha pasado y cómo se ha resuelto"
-  - "Un mismo equipo técnico conoce tu infraestructura en cada intervención"
+  - "Atención adaptada a la incidencia y al servicio contratado"
+  - "Explicaciones claras del problema y del trabajo realizado"
+  - "Coordinación del soporte remoto y las visitas necesarias"
 remoteWork: "El soporte remoto cubre la mayoría de incidencias de software, configuración, conectividad y uso de programas."
 onSiteWork: "La visita presencial se reserva para averías físicas, instalaciones o casos que no pueden diagnosticarse a distancia."
 faq:
@@ -28,7 +28,7 @@ faq:
   - question: "¿Cómo se accede al soporte remoto?"
     answer: "Mediante herramientas de acceso remoto seguro que se acuerdan contigo antes de la primera intervención."
   - question: "¿Atendéis fuera de Sevilla?"
-    answer: "El soporte remoto puede prestarse en cualquier punto de España. El soporte presencial se centra en Sevilla y su provincia."
+    answer: "Servicio presencial en Sevilla, Huelva, Cádiz, Córdoba y Málaga, y soporte remoto en el resto de Andalucía y España. Las visitas se conciertan previamente."
 relatedServices:
   - "mantenimiento-informatico"
   - "redes-wifi"

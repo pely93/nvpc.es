@@ -3,6 +3,7 @@ title: "Diferencias entre soporte remoto y presencial"
 description: "Qué tipo de incidencias se resuelven en remoto y cuáles requieren una visita técnica presencial."
 category: "trabajo-remoto"
 date: 2026-03-03
+updatedDate: 2026-09-24
 ---
 
 Una de las dudas más habituales al contratar soporte informático es qué parte del servicio puede resolverse a distancia y qué parte necesita una visita.
@@ -21,3 +22,5 @@ Una de las dudas más habituales al contratar soporte informático es qué parte
 - Revisiones de infraestructura física del local.
 
 En NVPC combinamos ambos tipos de soporte según lo que necesite cada incidencia, priorizando siempre la vía más rápida para resolver el problema.
+
+Servicio presencial en Sevilla, Huelva, Cádiz, Córdoba y Málaga, y soporte remoto en el resto de Andalucía y España. Las visitas se conciertan previamente. Consulta nuestras [zonas de servicio](/zonas/).

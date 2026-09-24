@@ -1,4 +1,5 @@
 ---
+import { business } from "@/data/business";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import FAQ from "@/components/FAQ.astro";
@@ -79,6 +80,8 @@ const jsonLd = [
           </ul>
         </>
       )}
+
+      <p>{business.coverage} {business.appointment}</p>
 
       <p>
         Este servicio se combina con nuestras <a href={withBase("/tarifas/")}>tarifas planas de mantenimiento</a> y con la

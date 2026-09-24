@@ -10,10 +10,10 @@ audience:
   - "Negocios que están creciendo y necesitan revisar su infraestructura"
   - "Empresas que quieren digitalizar procesos internos"
 includes:
-  - "Revisión de la infraestructura y necesidades actuales"
-  - "Recomendaciones sobre equipos, redes y herramientas"
-  - "Acompañamiento en la puesta en marcha de los cambios"
-  - "Valoración de proyectos de digitalización"
+  - "Revisión de necesidades de equipos, redes y servicios"
+  - "Propuesta técnica adaptada a la infraestructura"
+  - "Alcance del asesoramiento definido antes de empezar"
+  - "Acompañamiento en la puesta en marcha cuando se contrate"
 benefits:
   - "Decisiones tecnológicas basadas en tu situación real, no en modas"
   - "Menor riesgo de invertir en equipos o herramientas que no necesitas"
@@ -24,17 +24,15 @@ faq:
   - question: "¿La consultoría tiene un coste fijo?"
     answer: "Depende del alcance del proyecto. Lo valoramos contigo antes de empezar y te damos un presupuesto claro."
   - question: "¿Puedo contratar consultoría sin contratar después el proyecto?"
-    answer: "Sí, la consultoría es un servicio independiente, aunque puede derivar en un proyecto posterior si así lo decides."
+    answer: "Cuéntanos qué necesitas y definimos el alcance del asesoramiento y su presupuesto."
 relatedServices:
-  - "mantenimiento-informatico"
-  - "redes-wifi"
-  - "diseno-web"
+  - "equipos-y-licencias"
+  - "proyectos-it"
+  - "microsoft-365"
 ---
 
-Antes de invertir en equipos nuevos, cambiar de proveedor de red o digitalizar un proceso interno, conviene tener una visión técnica clara de qué se necesita realmente y qué no.
-
-La consultoría tecnológica de NVPC te ayuda a tomar esas decisiones con criterio, evitando gastos innecesarios y priorizando lo que tiene impacto real en tu negocio.
+Te ayudamos a decidir qué equipos, redes y servicios tecnológicos necesita tu empresa. Revisamos la situación de partida y proponemos una solución ajustada al uso, al crecimiento previsto y al presupuesto.
 
 ## Cómo se trabaja
 
-Revisamos tu situación actual, identificamos los puntos que necesitan atención y te entregamos recomendaciones concretas, con acompañamiento en la puesta en marcha si lo necesitas.
+El entregable, el coste y el acompañamiento se definen en la propuesta. El asesoramiento puede coordinar suministro de equipos y licencias, servidores, Microsoft 365, cloud, telecomunicaciones y proyectos IT. La automatización se plantea cuando forma parte de un proyecto concreto.

@@ -3,7 +3,7 @@ import CaseStudyLayout from "@/layouts/CaseStudyLayout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const cases = await getCollection("cases");
+  const cases = await getCollection("cases", ({ data }) => !data.draft && data.consent === "confirmado");
   return cases.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },

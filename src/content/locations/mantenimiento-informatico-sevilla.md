@@ -15,10 +15,10 @@ includes:
   - "Gestión de incidencias de hardware, software y red"
 coverageAreas:
   - "Sevilla capital"
-  - "Área metropolitana de Sevilla"
+  - "Toda la provincia de Sevilla"
 faq:
   - question: "¿Atendéis empresas fuera de Sevilla capital?"
-    answer: "Sí, prestamos servicio presencial en Sevilla capital y su área metropolitana, y soporte remoto en el resto de España."
+    answer: "Servicio presencial en Sevilla, Huelva, Cádiz, Córdoba y Málaga, y soporte remoto en el resto de Andalucía y España. La atención presencial se concierta previamente."
   - question: "¿Cuánto tarda una visita presencial?"
     answer: "El tiempo de respuesta se acuerda según el plan de mantenimiento contratado."
   - question: "¿Puedo empezar solo con soporte remoto?"

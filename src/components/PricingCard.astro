@@ -13,7 +13,7 @@ const { plan } = Astro.props;
 >
   {plan.highlighted && (
     <p class="label-caps w-fit text-xs text-accent">
-      Más elegido
+      Soporte para tu empresa
     </p>
   )}
   <header>
@@ -24,7 +24,7 @@ const { plan } = Astro.props;
   <p class="text-sm text-ink-soft">{plan.description}</p>
 
   <div>
-    <h4 class="label-caps text-xs text-ink-faint">Qué incluye</h4>
+    <h4 class="label-caps text-xs text-ink-faint">Alcance según contratación</h4>
     <ul class="mt-2 space-y-1.5 text-sm text-ink-soft">
       {plan.includes.map((item) => (
         <li class="flex gap-2">

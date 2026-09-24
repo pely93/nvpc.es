@@ -2,63 +2,24 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import ContactCTA from "@/components/ContactCTA.astro";
-import { withBase } from "@/config";
+import { business } from "@/data/business";
 
-const plannedLocalities = [
-  "Dos Hermanas",
-  "Alcalá de Guadaíra",
-  "Mairena del Aljarafe",
-  "Tomares",
-  "Camas",
-  "La Rinconada",
-  "Bormujos",
-  "Coria del Río",
-];
 ---
-
-<BaseLayout
-  title="Zonas de servicio"
-  description="NVPC atiende de forma presencial Sevilla y su área metropolitana, y ofrece soporte remoto en toda España."
-  canonical="/zonas/"
->
+<BaseLayout title="Zonas de servicio" description="Atención presencial en Sevilla, Huelva, Cádiz, Córdoba y Málaga. Soporte remoto en el resto de Andalucía y España." canonical="/zonas/">
   <Breadcrumbs items={[{ label: "Zonas de servicio" }]} />
-
   <section class="container-nvpc py-[var(--space-section)]">
-    <h1 class="max-w-2xl text-3xl text-ink sm:text-4xl">Zonas de servicio</h1>
-    <p class="mt-4 max-w-2xl text-lg text-ink-soft">
-      Prestamos servicio presencial en Sevilla y su área metropolitana, y soporte remoto en cualquier punto de España.
-    </p>
+    <h1 class="max-w-3xl text-3xl text-ink sm:text-4xl">Zonas de servicio</h1>
 
-    <div class="mt-10 grid gap-6 sm:grid-cols-2">
-      <div class="rounded-[3px] border border-border bg-surface p-6">
-        <h2 class="font-heading text-xl text-ink">Servicio presencial</h2>
-        <p class="mt-2 text-ink-soft">
-          <a href={withBase("/sevilla/")} class="font-semibold text-brand hover:underline">Sevilla capital y área metropolitana</a>.
-        </p>
-      </div>
-      <div class="rounded-[3px] border border-border bg-surface p-6">
-        <h2 class="font-heading text-xl text-ink">Servicio remoto</h2>
-        <p class="mt-2 text-ink-soft">Soporte técnico, mantenimiento y diseño web en toda España.</p>
-      </div>
-    </div>
+<p class="mt-4 max-w-3xl text-lg text-ink-soft">{business.coverage}</p>
+<div class="mt-10 grid gap-6 lg:grid-cols-2">
+ <div class="rounded-sm border border-border bg-surface p-7"><h2 class="text-2xl text-ink">Servicio presencial</h2>
+ <ul class="mt-5 space-y-2 text-ink-soft">{business.onSiteProvinces.map(province => <li>{province}{province === "Sevilla" ? " — toda la provincia" : ""}</li>)}</ul>
+ <p class="mt-5 text-ink-soft">{business.appointment}</p></div>
+ <div class="rounded-sm border border-border bg-surface p-7"><h2 class="text-2xl text-ink">Soporte remoto</h2>
+ <p class="mt-5 text-ink-soft">En Almería, Granada y Jaén, y en el resto de España, ofrecemos asistencia remota para las tareas que pueden resolverse a distancia.</p>
+ <p class="mt-4 text-ink-soft">Las instalaciones físicas y las averías que requieren trabajar sobre el equipo se valoran según su ubicación y necesidades.</p></div>
+</div>
 
-    <div class="mt-14">
-      <h2 class="text-2xl text-ink">Próximas zonas</h2>
-      <p class="mt-3 max-w-2xl text-ink-soft">
-        Estamos preparando páginas específicas para las siguientes localidades del área metropolitana de Sevilla. Se publicarán cuando exista cobertura real confirmada e información local suficiente.
-      </p>
-      <ul class="mt-6 flex flex-wrap gap-3">
-        {plannedLocalities.map((locality) => (
-          <li class="rounded-[3px] border border-border bg-paper px-4 py-2 text-sm text-ink-soft">
-            {locality} — [PENDIENTE DE CONFIRMAR]
-          </li>
-        ))}
-      </ul>
-    </div>
   </section>
-
-  <ContactCTA
-    title="¿Tu negocio está en una de estas zonas?"
-    description="Cuéntanos dónde estás y qué necesitas: te confirmamos si podemos atenderte de forma presencial o remota."
-  />
+  <ContactCTA />
 </BaseLayout>

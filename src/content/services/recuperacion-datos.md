@@ -19,7 +19,7 @@ benefits:
   - "Recuperación de la información cuando el estado del dispositivo lo permite"
   - "Recomendaciones claras sobre cómo proceder con el dispositivo afectado"
 remoteWork: "El diagnóstico preliminar puede orientarse por teléfono o email, pero la recuperación en sí requiere el dispositivo físico."
-onSiteWork: "El análisis y la recuperación se realizan sobre el dispositivo físico, entregado en persona o enviado según se acuerde."
+onSiteWork: "El diagnóstico que requiere trabajar sobre el soporte se coordina previamente. Contacta antes de entregar o enviar el dispositivo: te indicaremos el procedimiento y las condiciones de recepción."
 faq:
   - question: "¿Podéis garantizar la recuperación completa de mis datos?"
     answer: "No. La recuperación depende del estado físico y lógico del dispositivo. Hacemos un diagnóstico honesto antes de intervenir y no prometemos resultados que no se puedan garantizar."
@@ -27,15 +27,15 @@ faq:
     answer: "Deja de usarlo de inmediato. Seguir utilizando un dispositivo dañado puede reducir las posibilidades de recuperación."
   - question: "¿Cuánto tarda el diagnóstico?"
     answer: "El tiempo depende del tipo de avería y de la carga de trabajo. Te lo indicamos al recibir el dispositivo."
+  - question: "¿El diagnóstico tiene coste?"
+    answer: "Los plazos, el coste del diagnóstico y las condiciones de intervención se comunican según el caso, antes de iniciar el trabajo."
 relatedServices:
   - "seguridad-informatica"
   - "mantenimiento-informatico"
 ---
 
-Cuando un disco duro o un SSD deja de funcionar, lo primero es evitar que la situación empeore: cada intento adicional de encendido o de "arreglarlo por tu cuenta" puede reducir las posibilidades de recuperar la información.
-
-Si tu equipo o dispositivo ha dejado de responder, **deja de utilizarlo** y contacta con nosotros cuanto antes para valorar el caso.
+Si has perdido acceso a tus datos, deja de utilizar el dispositivo y contacta con nosotros. Valoramos el problema y te explicamos las opciones de diagnóstico y recuperación antes de proponer una intervención.
 
 ## Cómo se trabaja
 
-Empezamos con un diagnóstico del dispositivo para valorar su estado físico y lógico. A partir de ahí, te explicamos con claridad qué posibilidades reales de recuperación existen antes de iniciar cualquier intervención.
+Contacta antes de entregar o enviar el dispositivo. Te indicaremos los pasos y las condiciones de recepción. El resultado depende del tipo de avería y del estado del soporte; no puede garantizarse la recuperación completa.

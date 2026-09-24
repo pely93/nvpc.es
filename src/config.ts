@@ -14,7 +14,7 @@ export const siteName = "NVPC · Networking Virtual PC";
 // subruta para que canonicals, Open Graph y JSON-LD generen URLs absolutas
 // correctas.
 export const siteUrl = "https://pely93.github.io/nvpc.es";
-export const defaultOgImage = "/og-image.svg";
+export const defaultOgImage = "/logos/nvpc.jpg";
 
 function toAbsoluteUrl(path: string): string {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;

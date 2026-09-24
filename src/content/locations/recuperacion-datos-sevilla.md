@@ -9,13 +9,13 @@ commonProblems:
   - "Dispositivos dañados tras un golpe o una caída"
   - "Fallos tras una actualización de sistema"
 includes:
-  - "Recepción y diagnóstico del dispositivo en Sevilla"
+  - "Recepción del dispositivo según el procedimiento acordado previamente"
   - "Valoración honesta de las posibilidades de recuperación"
   - "Recuperación según el estado físico y lógico del soporte"
   - "Recomendaciones para evitar la pérdida de datos en el futuro"
 faq:
   - question: "¿Puedo llevar el dispositivo en persona?"
-    answer: "Sí, puedes entregarlo directamente para el diagnóstico inicial."
+    answer: "Contacta antes de entregar o enviar el dispositivo. Te indicaremos el procedimiento, el punto de recepción y las condiciones."
   - question: "¿Qué debo hacer mientras tanto?"
     answer: "Deja de utilizar el dispositivo afectado para no reducir las posibilidades de recuperación."
   - question: "¿Podéis garantizar la recuperación total?"

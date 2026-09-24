@@ -1,7 +1,7 @@
 ---
 title: "Diseño web en Sevilla"
 service: "Diseño web"
-description: "Diseño de webs corporativas y tiendas online para empresas y profesionales de Sevilla, con mantenimiento incluido."
+description: "Diseño de webs corporativas y tiendas online para empresas y profesionales de Sevilla, con mantenimiento disponible según propuesta."
 intro: "Muchas empresas de Sevilla operan sin una web actualizada o sin presencia online, lo que dificulta que nuevos clientes las encuentren. NVPC diseña webs corporativas y tiendas online adaptadas a cada negocio."
 commonProblems:
   - "Ausencia de web propia"
@@ -12,7 +12,7 @@ includes:
   - "Diseño de web corporativa o tienda online"
   - "Diseño responsive"
   - "SEO técnico básico"
-  - "Mantenimiento posterior"
+  - "Mantenimiento posterior disponible según propuesta"
 faq:
   - question: "¿Trabajáis con negocios de cualquier sector en Sevilla?"
     answer: "Sí, adaptamos el proyecto a las necesidades de cada negocio, sea cual sea su sector."

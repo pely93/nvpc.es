@@ -9,13 +9,13 @@ commonProblems:
   - "Programas de gestión que dejan de funcionar tras una actualización"
   - "Falta de un técnico de confianza al que recurrir con rapidez"
 includes:
-  - "Diagnóstico remoto inmediato cuando es posible"
-  - "Visita presencial en Sevilla y su área metropolitana"
+  - "Atención remota en horario comercial, según disponibilidad y condiciones contratadas"
+  - "Visita presencial en Sevilla y toda su provincia"
   - "Resolución de incidencias de software, hardware y periféricos"
   - "Explicación clara del problema y de la solución aplicada"
 coverageAreas:
   - "Sevilla capital"
-  - "Área metropolitana de Sevilla"
+  - "Toda la provincia de Sevilla"
 faq:
   - question: "¿Puedo solicitar soporte puntual sin contrato de mantenimiento?"
     answer: "Sí, el soporte puntual está disponible tanto para empresas con tarifa plana como para quienes necesitan una intervención concreta."
@@ -26,4 +26,4 @@ faq:
 relatedService: "soporte-informatico"
 ---
 
-En una empresa de Sevilla, una incidencia técnica no siempre puede esperar. NVPC combina soporte remoto inmediato con visitas presenciales cuando el caso lo requiere, para que la incidencia se resuelva sin más demora de la necesaria.
+En una empresa de Sevilla, una incidencia técnica no siempre puede esperar. NVPC combina soporte remoto en horario comercial con visitas presenciales cuando el caso lo requiere, para que la incidencia se resuelva sin más demora de la necesaria.

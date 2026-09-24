@@ -15,7 +15,7 @@ includes:
   - "Segmentación de redes según el uso"
 coverageAreas:
   - "Sevilla capital"
-  - "Área metropolitana de Sevilla"
+  - "Toda la provincia de Sevilla"
 faq:
   - question: "¿Podéis ampliar una red ya existente?"
     answer: "Sí, valoramos la instalación actual y proponemos la ampliación necesaria sin rehacer lo que ya funciona bien."
