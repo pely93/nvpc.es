@@ -31,6 +31,7 @@ export default defineConfig({
     name: "sitemap-standard-alias",
     hooks: { "astro:build:done": async ({ dir }) => {
       await copyFile(new URL("sitemap-index.xml", dir), new URL("sitemap.xml", dir));
+      if (production) await copyFile(new URL("./deploy/ovh.htaccess", import.meta.url), new URL(".htaccess", dir));
     } },
   }],
   markdown: {
