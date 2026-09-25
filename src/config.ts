@@ -8,12 +8,8 @@ export type SeoData = {
 
 export const siteName = "NVPC · Networking Virtual PC";
 
-// Despliegue en GitHub Pages de proyecto: el sitio no vive en la raíz del
-// dominio, sino en /nvpc.es/ (la subruta es siempre el nombre del repo,
-// pely93/nvpc.es en este caso; no es configurable). siteUrl incluye esa
-// subruta para que canonicals, Open Graph y JSON-LD generen URLs absolutas
-// correctas.
-export const siteUrl = "https://pely93.github.io/nvpc.es";
+// Astro supplies the deployment origin and base to SEO and structured data.
+export const siteUrl = `${import.meta.env.SITE ?? "https://pely93.github.io"}${(import.meta.env.BASE_URL ?? "/nvpc.es/").replace(/\/$/, "")}`;
 export const defaultOgImage = "/logos/nvpc.jpg";
 
 function toAbsoluteUrl(path: string): string {

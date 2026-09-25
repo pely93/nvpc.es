@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pely93.github.io/nvpc.es/sitemap-index.xml

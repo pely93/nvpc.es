@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "build:ovh": "DEPLOY_TARGET=ovh astro build --outDir ../production-ovh",
     "astro": "astro",
     "lint": "eslint . --ext .ts,.astro",
     "format": "prettier --write .",
