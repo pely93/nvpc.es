@@ -30,3 +30,6 @@ La comprobación visual sigue limitada por el bloqueo del navegador. No se ha co
 
 No existe marcado especial que garantice aparecer en respuestas de IA. Estas mejoras facilitan acceso, comprensión y atribución del contenido.
 Referencias: https://developers.google.com/search/docs/appearance/ai-features y https://developers.openai.com/api/docs/bots
+
+## Analytics y consentimiento
+GA4 G-FD38J4BHZ5 recuperado del código público actual (ExactMetrics). No se detectaron GTM ni Meta Pixel en inicio, servicios, tarifas y contacto. La nueva implementación carga gtag únicamente después de aceptar analíticas y solo en nvpc.es/www.nvpc.es. Aviso disponible también en revisión, sin envío a Google. Cinco pruebas de consentimiento verifican bloqueo inicial, rechazo, aceptación, caducidad y retirada. Pendiente validación de recepción en GA4 tras la publicación real.

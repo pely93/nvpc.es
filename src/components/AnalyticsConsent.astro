@@ -1,0 +1,66 @@
+  <section id="analytics-consent" class="analytics-consent" aria-labelledby="analytics-consent-title" hidden>
+    <h2 id="analytics-consent-title" class="text-xl">Cookies analíticas</h2>
+    <p class="mt-2 text-sm">Networking Virtual PC utiliza Google Analytics para conocer las visitas y mejorar la web. Solo lo activaremos si aceptas. Puedes cambiar tu decisión en «Configurar cookies», al pie de página.</p>
+    <details class="mt-3 text-sm">
+      <summary class="cursor-pointer underline">Más información</summary>
+      <p class="mt-2">Google recibe información de navegación al aceptar. Se utilizan cookies _ga para distinguir visitas, con una duración configurada de seis meses. Guardamos tu elección en este navegador durante seis meses. No activamos funciones publicitarias.</p>
+      <p class="mt-2"><a class="underline" href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Cómo utiliza Google los datos (se abre en otra pestaña)</a>. Para consultas: <a class="underline" href="mailto:info@nvpc.es">info@nvpc.es</a>.</p>
+    </details>
+    <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <button type="button" data-analytics-choice="denied" class="action-button button-outline rounded-sm">Rechazar analíticas</button>
+      <button type="button" data-analytics-choice="granted" class="action-button button-outline rounded-sm">Aceptar analíticas</button>
+    </div>
+  </section>
+  <script is:inline>
+    (() => {
+      const panel = document.getElementById('analytics-consent');
+      const key = 'nvpc-analytics-consent-v1';
+      const id = 'G-FD38J4BHZ5';
+      const duration = 180 * 24 * 60 * 60 * 1000;
+      let loaded = false;
+      let preference;
+      try {
+        const stored = JSON.parse(localStorage.getItem(key) || 'null');
+        if (stored && stored.expires > Date.now() && ['granted', 'denied'].includes(stored.choice)) preference = stored.choice;
+      } catch { /* With unavailable storage, ask again instead of tracking. */ }
+      function enable() {
+        if (!['nvpc.es', 'www.nvpc.es'].includes(location.hostname)) return;
+        if (loaded) return;
+        loaded = true;
+        window['ga-disable-' + id] = false;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+        window.gtag('js', new Date());
+        window.gtag('config', id, { allow_google_signals: false, allow_ad_personalization_signals: false, cookie_expires: duration / 1000 });
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+        document.head.appendChild(script);
+      }
+      function removeAnalyticsCookies() {
+        const host = location.hostname;
+        const domains = ['', host, '.' + host, 'nvpc.es', '.nvpc.es'];
+        document.cookie.split(';').map(cookie => cookie.trim().split('=')[0]).filter(name => /^_ga($|_)/.test(name)).forEach(name => {
+          domains.forEach(domain => { document.cookie = name + '=; Max-Age=0; path=/' + (domain ? '; domain=' + domain : ''); });
+        });
+      }
+      panel.hidden = !!preference;
+      if (preference === 'granted') enable();
+      panel.querySelectorAll('[data-analytics-choice]').forEach(button => button.addEventListener('click', () => {
+        const choice = button.dataset.analyticsChoice;
+        try { localStorage.setItem(key, JSON.stringify({ choice, expires: Date.now() + duration })); } catch { /* Choice still applies to this page. */ }
+        panel.hidden = true;
+        if (choice === 'granted') enable();
+        else {
+          window['ga-disable-' + id] = true;
+          removeAnalyticsCookies();
+          if (loaded) location.reload();
+        }
+      }));
+      document.querySelectorAll('[data-cookie-settings]').forEach(button => button.addEventListener('click', () => {
+        panel.hidden = false;
+        panel.querySelector('button').focus();
+      }));
+    })();
+  </script>
