@@ -212,3 +212,34 @@ p, li, dd { overflow-wrap: break-word; }
 }
 .site-header { padding-top: env(safe-area-inset-top); }
 html { scroll-padding-top: calc(var(--masthead-height) + env(safe-area-inset-top) + var(--space-md)); }
+
+/* Interior pages: compact rhythm, reliable gutters and balanced service lists. */
+.container-nvpc {
+  padding-inline: var(--page-gutter);
+  padding-left: max(var(--page-gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--page-gutter), env(safe-area-inset-right, 0px));
+}
+.interior-page { padding-block: clamp(1.5rem, 3vw, 3rem); }
+.interior-flow { margin-top: clamp(1.25rem, 2vw, 2rem); }
+.interior-faq { margin-top: clamp(2rem, 3vw, 3rem); }
+.interior-page .prose > :first-child { margin-top: 0; }
+.interior-page .prose h2 { margin-top: 1.75em; margin-bottom: .65em; }
+.interior-page .prose p { margin-block: 1em; }
+.reading-page { max-width: 52rem; }
+.location-intro { max-width: 65rem; }
+.location-content { max-width: none; }
+.location-details {
+  display: grid;
+  gap: 1.25rem;
+  margin-block: 1.75rem;
+}
+.location-details > section {
+  min-width: 0;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.25rem;
+}
+.location-content .location-details h2 { margin-top: 0; }
+.location-content .location-details ul { margin-bottom: 0; }
+@media (min-width: 48rem) {
+  .location-details { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; }
+}

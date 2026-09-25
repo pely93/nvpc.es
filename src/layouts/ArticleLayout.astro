@@ -26,7 +26,7 @@ const jsonLd = {
 <BaseLayout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Breadcrumbs items={[{ label: "Blog", href: "/blog/" }, { label: title }]} />
 
-  <article class="container-nvpc py-[var(--space-section)]">
+  <article class="container-nvpc interior-page reading-page">
     <header class="max-w-3xl">
       <h1 class="text-3xl text-ink sm:text-4xl">{title}</h1>
       <p class="mt-2 text-sm text-ink-soft">
@@ -35,7 +35,7 @@ const jsonLd = {
       {updatedDate && <p class="mt-1 text-sm text-ink-soft">Actualizado el {updatedDate.toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" })}</p>}
     </header>
 
-    <div class="mt-10 max-w-3xl prose prose-slate prose-headings:font-heading prose-headings:text-ink">
+    <div class="interior-flow max-w-3xl prose prose-slate prose-headings:font-heading prose-headings:text-ink">
       <slot />
     </div>
   </article>

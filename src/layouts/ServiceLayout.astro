@@ -57,13 +57,13 @@ const jsonLd = [
 <BaseLayout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Breadcrumbs items={[{ label: "Servicios", href: "/servicios/" }, { label: title }]} />
 
-  <article class="container-nvpc py-[var(--space-section)]">
+  <article class="container-nvpc interior-page">
     <header class="max-w-3xl">
       <h1 class="text-3xl text-ink sm:text-4xl">{title}</h1>
       <p class="mt-4 text-lg text-ink-soft">{problem}</p>
     </header>
 
-    <div class="mt-10 grid gap-10 lg:grid-cols-3">
+    <div class="interior-flow grid gap-10 lg:grid-cols-3">
       <div class="lg:col-span-2 prose prose-slate max-w-none prose-headings:font-heading prose-headings:text-ink">
         <slot />
 
@@ -121,7 +121,7 @@ const jsonLd = [
     </div>
 
     {faq.length > 0 && (
-      <div class="mt-16 max-w-3xl">
+      <div class="interior-faq">
         <FAQ items={faq} />
       </div>
     )}

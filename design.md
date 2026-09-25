@@ -124,3 +124,7 @@ paleta de contenido ni la pareja tipográfica. La revisión se apoya en las
 capturas del usuario y la validación de la salida estática. La verificación
 visual en navegador a 320/375/414/768px queda limitada por el bloqueo de la
 herramienta de navegación; no debe registrarse como superada sin realizarla.
+
+
+### Interior spacing and Lenovo
+Interior pages use 24–48px vertical padding, stable safe-area gutters and smaller introduction gaps. Local-service problem/inclusion lists use two columns from 768px and a single column below. Blog reading columns are centered. Original supplied Lenovo 2024 emblem added to brands without asserting current certification. Browser visual verification remains unavailable due to the browser policy restriction.
