@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="bg-brand-dark text-on-brand-dim">
-  <div class="container-nvpc grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+  <div class="container-nvpc grid gap-10 py-16 sm:grid-cols-2 xl:grid-cols-[minmax(0,1.3fr)_repeat(3,minmax(0,1fr))]">
     <div>
       <p class="flex items-center gap-2.5 font-heading text-lg font-semibold text-on-brand">
         <img src={withBase("/logos/nvpc.jpg")} alt="Networking Virtual PC" width="600" height="600" class="h-20 w-20 rounded-sm object-contain" />
@@ -19,7 +19,7 @@ const year = new Date().getFullYear();
       </p>
     </div>
 
-    <nav aria-label="Servicios en el pie de página" class="lg:border-l lg:border-on-brand-rule lg:pl-8">
+    <nav aria-label="Servicios en el pie de página" class="xl:border-l xl:border-on-brand-rule xl:pl-6">
       <h2 class="label-caps text-xs text-on-brand-faint">Servicios</h2>
       <ul class="mt-4 space-y-2 text-sm">
         {footerServiceLinks.map((link) => (
@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
 
-    <nav aria-label="Zonas de servicio en el pie de página" class="lg:border-l lg:border-on-brand-rule lg:pl-8">
+    <nav aria-label="Zonas de servicio en el pie de página" class="xl:border-l xl:border-on-brand-rule xl:pl-6">
       <h2 class="label-caps text-xs text-on-brand-faint">Zonas de servicio</h2>
       <ul class="mt-4 space-y-2 text-sm">
         {footerLocationLinks.map((link) => (
@@ -37,7 +37,7 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
 
-    <div class="lg:border-l lg:border-on-brand-rule lg:pl-8">
+    <div class="xl:border-l xl:border-on-brand-rule xl:pl-6">
       <h2 class="label-caps text-xs text-on-brand-faint">Contacto</h2>
       <ul class="mt-4 space-y-2 text-sm">
         <li><a href={business.phoneHref} class="hover:text-on-brand">{business.phoneDisplay}</a></li>
@@ -52,7 +52,7 @@ const year = new Date().getFullYear();
   <div class="border-t border-on-brand-rule py-6">
     <div class="container-nvpc flex flex-col gap-2 text-xs text-on-brand-faint sm:flex-row sm:items-center sm:justify-between">
       <p>&copy; {year} NVPC · Networking Virtual PC. Todos los derechos reservados.</p>
-      <div class="flex gap-4">
+      <div class="flex flex-wrap gap-x-4 gap-y-2">
         <a href={withBase("/sobre-nvpc/")} class="hover:text-on-brand">Sobre NVPC</a>
         <a href={withBase("/opinion/")} class="hover:text-on-brand">Opinión</a>
         <a href={withBase("/contacto/")} class="hover:text-on-brand">Contacto</a>

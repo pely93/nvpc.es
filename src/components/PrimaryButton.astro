@@ -15,10 +15,10 @@ const { href, variant = "solid", size = "md", class: className = "" } = Astro.pr
 const resolvedHref = href.startsWith("/") ? withBase(href) : href;
 
 const base =
-  "label-caps inline-flex items-center justify-center gap-2 rounded-[3px] transition-colors min-h-[44px] focus-visible:outline-offset-2";
+  "action-button label-caps inline-flex items-center justify-center gap-2 rounded-[3px] transition-colors focus-visible:outline-offset-2";
 const sizes = {
-  md: "px-5 py-2.5 text-xs",
-  lg: "px-6 py-3.5 text-sm",
+  md: "action-button--md",
+  lg: "action-button--lg",
 };
 const variants = {
   solid: "bg-brand text-paper hover:bg-brand-dark",

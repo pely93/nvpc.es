@@ -101,3 +101,26 @@ espectáculo, necesita que la página cargue rápido y se lea bien.
   patrón columna+panel.
 - El uso del acento cobre, siempre por debajo del 5% de cualquier
   vista.
+
+## Ajustes responsive — septiembre de 2026
+
+Se mantiene el sistema editorial existente. La cabecera blanca fue solicitada
+por el propietario; el logo suministrado se comparte entre la cabecera y el
+menú móvil mediante `BrandLogo.astro`.
+
+- La navegación de escritorio se muestra desde 80rem para evitar colisiones.
+- El menú móvil utiliza un diálogo nativo con desplazamiento propio, cierre
+  con Escape y contención de foco. Comparte alturas, márgenes y logo con la cabecera.
+- Los botones de acción tienen altura mínima de 3rem y etiquetas en una línea.
+  Los tres canales de contacto se apilan hasta 64rem y pasan juntos a tres columnas.
+- La franja de servicios pasa por cuadrículas de una, dos y cuatro columnas;
+  sus separadores dependen de la columna, no del salto de línea del texto.
+- Contenedores y columnas permiten encogimiento sin desbordar. Se incluyen
+  márgenes de seguridad, títulos con ajuste de palabras y anclas bajo la cabecera.
+- El botón de WhatsApp usa un verde más oscuro para mantener el contraste del texto.
+
+Los tokens adicionales están en `src/styles/global.css`; no se cambia la
+paleta de contenido ni la pareja tipográfica. La revisión se apoya en las
+capturas del usuario y la validación de la salida estática. La verificación
+visual en navegador a 320/375/414/768px queda limitada por el bloqueo de la
+herramienta de navegación; no debe registrarse como superada sin realizarla.

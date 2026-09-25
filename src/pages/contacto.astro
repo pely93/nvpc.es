@@ -12,10 +12,10 @@ import WhatsAppButton from "@/components/WhatsAppButton.astro";
 
 <p class="mt-4 max-w-2xl text-lg text-ink-soft">Cuéntanos qué necesita tu empresa. Te atendemos en nuestro horario comercial: {business.schedule}.</p>
 <div class="mt-10 grid gap-6 lg:grid-cols-2">
- <div class="space-y-4">
-  <a href={business.phoneHref} class="block rounded-sm border border-border bg-surface p-6 font-heading text-xl text-brand">Llamar: {business.phoneDisplay}</a>
-  <a href={`mailto:${business.email}`} class="block rounded-sm border border-border bg-surface p-6 font-heading text-xl text-brand">{business.email}</a>
-  <WhatsAppButton class="w-full !justify-start !py-5" />
+ <div class="contact-methods space-y-4">
+  <a href={business.phoneHref} class="contact-method block rounded-sm border border-border bg-surface font-heading text-xl text-brand">Llamar: {business.phoneDisplay}</a>
+  <a href={`mailto:${business.email}`} class="contact-method block rounded-sm border border-border bg-surface font-heading text-xl text-brand">{business.email}</a>
+  <WhatsAppButton class="w-full !justify-start" size="lg" />
  </div>
  <div class="space-y-5 rounded-sm border border-border p-6 text-ink-soft">
   <h2 class="text-xl text-ink">Atención y visitas</h2>

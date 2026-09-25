@@ -1,20 +1,8 @@
 ---
-const items = [
-  "Soporte técnico",
-  "Mantenimiento informático",
-  "Redes y WiFi",
-  "Soluciones para empresas",
-];
+const items = ["Soporte técnico", "Mantenimiento informático", "Redes y WiFi", "Soluciones para empresas"];
 ---
-
-<section class="border-y border-border bg-surface py-7" aria-label="Áreas de trabajo de NVPC">
-  <div class="container-nvpc flex flex-wrap gap-x-8 gap-y-3">
-    {
-      items.map((item, i) => (
-        <p class={`label-caps text-xs text-ink-soft ${i > 0 ? "sm:border-l sm:border-border sm:pl-8" : ""}`}>
-          {item}
-        </p>
-      ))
-    }
-  </div>
+<section class="border-y border-border bg-surface py-6" aria-label="Áreas de trabajo de NVPC">
+  <ul class="container-nvpc trust-grid">
+    {items.map(item => <li class="label-caps text-ink-soft">{item}</li>)}
+  </ul>
 </section>

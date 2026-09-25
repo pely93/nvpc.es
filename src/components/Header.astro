@@ -2,28 +2,26 @@
 import { mainNav } from "@/data/navigation";
 import { business } from "@/data/business";
 import { withBase } from "@/config";
+import BrandLogo from "@/components/BrandLogo.astro";
 import PrimaryButton from "@/components/PrimaryButton.astro";
 import MobileMenu from "@/components/MobileMenu.astro";
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="isolate sticky top-0 z-50 border-b border-border bg-white shadow-[0_1px_0_var(--color-border)]">
-  <div class="container-nvpc flex h-16 items-center justify-between gap-4 sm:h-20">
-    <a href={withBase("/")} class="flex shrink-0 items-center" aria-label="Networking Virtual PC — Inicio">
-      <!-- Blend the supplied JPEG's light matte into the masthead without a boxed background. -->
-      <img src={withBase("/logos/nvpc.jpg")} alt="Networking Virtual PC" width="600" height="600" class="h-14 w-28 object-cover mix-blend-multiply contrast-[1.08] sm:h-16 sm:w-32" />
-    </a>
+<header class="site-header sticky top-0 z-50 border-b border-border">
+  <div class="container-nvpc masthead-row">
+    <BrandLogo />
 
-    <nav aria-label="Navegación principal" class="hidden lg:block">
-      <ul class="label-caps flex items-center gap-7 text-xs text-ink-soft">
+    <nav aria-label="Navegación principal" class="hidden xl:block">
+      <ul class="label-caps flex items-center gap-4 text-xs text-ink-soft">
         {
           mainNav.map((item) => (
             <li>
               <a
                 href={withBase(item.href)}
                 aria-current={currentPath.startsWith(withBase(item.href)) ? "page" : undefined}
-                class="border-b-2 border-transparent pb-1 hover:text-ink aria-[current=page]:border-accent aria-[current=page]:text-ink"
+                class="whitespace-nowrap border-b-2 border-transparent pb-1 hover:text-ink aria-[current=page]:border-accent aria-[current=page]:text-ink"
               >
                 {item.label}
               </a>
@@ -33,8 +31,8 @@ const currentPath = Astro.url.pathname;
       </ul>
     </nav>
 
-    <div class="hidden items-center gap-4 lg:flex">
-      <a href={business.phoneHref} class="text-sm font-medium text-ink-soft hover:text-brand">
+    <div class="hidden shrink-0 items-center gap-3 xl:flex">
+      <a href={business.phoneHref} class="whitespace-nowrap text-sm font-medium text-ink-soft hover:text-brand">
         {business.phoneDisplay}
       </a>
       <PrimaryButton href="/contacto/" size="md">Solicitar presupuesto</PrimaryButton>

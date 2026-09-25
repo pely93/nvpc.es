@@ -2,98 +2,62 @@
 import { mainNav } from "@/data/navigation";
 import { business } from "@/data/business";
 import { withBase } from "@/config";
+import BrandLogo from "@/components/BrandLogo.astro";
+import PrimaryButton from "@/components/PrimaryButton.astro";
+const currentPath = Astro.url.pathname;
 ---
-
-<div class="lg:hidden">
-  <button
-    id="mobile-menu-button"
-    type="button"
-    class="flex h-11 w-11 items-center justify-center rounded-[3px] border border-border text-ink"
-    aria-expanded="false"
-    aria-controls="mobile-menu"
-    aria-label="Abrir menú de navegación"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <path d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
+<div class="shrink-0 xl:hidden">
+  <button id="mobile-menu-button" type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú de navegación">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
   </button>
-
-  <div
-    id="mobile-menu"
-    class="fixed inset-0 z-50 hidden bg-paper"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Menú de navegación"
-  >
-    <div class="container-nvpc flex h-16 items-center justify-between border-b border-border">
-      <span class="flex items-center gap-2 font-heading text-lg font-semibold text-ink">
-        <img src={withBase("/logo-mark.svg")} alt="" width="28" height="28" class="h-7 w-7" />
-        NVPC
-      </span>
-      <button
-        id="mobile-menu-close"
-        type="button"
-        class="flex h-11 w-11 items-center justify-center rounded-[3px] border border-border text-ink"
-        aria-label="Cerrar menú de navegación"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M6 6l12 12M18 6L6 18"></path>
-        </svg>
-      </button>
+  <dialog id="mobile-menu" class="mobile-menu" aria-label="Menú de navegación">
+    <div class="mobile-menu-heading border-b border-border">
+      <div class="container-nvpc masthead-row">
+        <BrandLogo />
+        <form method="dialog">
+          <button id="mobile-menu-close" type="submit" class="menu-toggle" aria-label="Cerrar menú de navegación" autofocus>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button>
+        </form>
+      </div>
     </div>
-    <nav aria-label="Navegación móvil" class="container-nvpc py-6">
+    <nav aria-label="Navegación móvil" class="mobile-menu-content container-nvpc">
       <ul class="divide-y divide-border font-heading text-xl text-ink">
-        {
-          mainNav.map((item) => (
-            <li>
-              <a href={withBase(item.href)} class="block min-h-[44px] py-3 hover:text-brand">
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
+        {mainNav.map(item => <li>
+          <a href={withBase(item.href)} aria-current={currentPath.startsWith(withBase(item.href)) ? "page" : undefined} class="block min-h-[48px] whitespace-nowrap py-3 hover:text-brand aria-[current=page]:text-brand">{item.label}</a>
+        </li>)}
       </ul>
-      <div class="mt-6 flex flex-col gap-3">
-        <a
-          href={withBase("/contacto/")}
-          class="label-caps flex min-h-[44px] items-center justify-center rounded-[3px] bg-brand px-5 py-3 text-center text-xs text-paper"
-        >
-          Solicitar presupuesto
-        </a>
-        <a
-          href={business.phoneHref}
-          class="label-caps flex min-h-[44px] items-center justify-center rounded-[3px] border border-brand px-5 py-3 text-center text-xs text-brand"
-        >
-          Llamar: {business.phoneDisplay}
-        </a>
+      <div class="mt-6 grid gap-3">
+        <PrimaryButton href="/contacto/">Solicitar presupuesto</PrimaryButton>
+        <PrimaryButton href={business.phoneHref} variant="outline">Llamar: {business.phoneDisplay}</PrimaryButton>
       </div>
     </nav>
-  </div>
+  </dialog>
 </div>
-
 <script>
-  const button = document.getElementById("mobile-menu-button");
-  const closeButton = document.getElementById("mobile-menu-close");
-  const menu = document.getElementById("mobile-menu");
+  const button = document.querySelector<HTMLButtonElement>("#mobile-menu-button");
+  const menu = document.querySelector<HTMLDialogElement>("#mobile-menu");
+  const desktop = window.matchMedia("(min-width: 80rem)");
+  let previousOverflow = "";
 
-  function openMenu() {
-    menu?.classList.remove("hidden");
-    button?.setAttribute("aria-expanded", "true");
-    closeButton?.focus();
-    document.body.style.overflow = "hidden";
-  }
+  button?.addEventListener("click", () => {
+    if (!menu || menu.open) return;
+    previousOverflow = document.body.style.overflowY;
+    menu.showModal();
+    button.setAttribute("aria-expanded", "true");
+    document.body.style.overflowY = "hidden";
+  });
 
-  function closeMenu() {
-    menu?.classList.add("hidden");
+  // Native dialog keeps focus in the menu and supports Escape and the close form.
+  menu?.addEventListener("close", () => {
+    document.body.style.overflowY = previousOverflow;
     button?.setAttribute("aria-expanded", "false");
-    button?.focus();
-    document.body.style.overflow = "";
-  }
-
-  button?.addEventListener("click", openMenu);
-  closeButton?.addEventListener("click", closeMenu);
-
-  menu?.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
+    if (!desktop.matches) button?.focus({ preventScroll: true });
+  });
+  menu?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => menu.close());
+  });
+  desktop.addEventListener("change", event => {
+    if (event.matches && menu?.open) menu.close();
   });
 </script>

@@ -14,20 +14,16 @@ const { items } = Astro.props;
     </li>
     {
       items.map((item, i) => (
-        <>
-          <li aria-hidden="true" class="px-1">
-            /
-          </li>
-          <li aria-current={i === items.length - 1 ? "page" : undefined}>
+          <li class="flex min-w-0 items-baseline gap-2" aria-current={i === items.length - 1 ? "page" : undefined}>
+            <span aria-hidden="true" class="shrink-0">/</span>
             {item.href ? (
               <a href={withBase(item.href)} class="hover:text-brand">
                 {item.label}
               </a>
             ) : (
-              <span class="font-medium text-ink">{item.label}</span>
+              <span class="min-w-0 font-medium text-ink">{item.label}</span>
             )}
           </li>
-        </>
       ))
     }
   </ol>
