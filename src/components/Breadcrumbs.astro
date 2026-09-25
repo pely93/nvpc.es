@@ -1,10 +1,19 @@
 ---
-import { withBase } from "@/config";
+import { siteUrl, withBase } from "@/config";
 
 type Crumb = { label: string; href?: string };
 type Props = { items: Crumb[] };
 
 const { items } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const currentPath = Astro.url.pathname.slice(base.length);
+const breadcrumb = {
+  "@context": "https://schema.org", "@type": "BreadcrumbList",
+  itemListElement: [{ label: "Inicio", href: "/" }, ...items].map((item, index) => ({
+    "@type": "ListItem", position: index + 1, name: item.label,
+    item: `${siteUrl}${item.href ?? currentPath}`,
+  })),
+};
 ---
 
 <nav aria-label="Migas de pan" class="border-b border-border bg-surface">
@@ -28,3 +37,5 @@ const { items } = Astro.props;
     }
   </ol>
 </nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} is:inline />

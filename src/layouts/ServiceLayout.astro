@@ -1,4 +1,5 @@
 ---
+import { businessId } from "@/lib/structured-data";
 import { business } from "@/data/business";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
@@ -23,22 +24,15 @@ const jsonLd = [
     "@type": "Service",
     name: title,
     description,
+    url: `${siteUrl}${canonical}`,
     provider: {
+      "@id": businessId,
       "@type": "LocalBusiness",
       name: "NVPC · Networking Virtual PC",
       telephone: "+34667200016",
       url: siteUrl,
     },
     areaServed: business.coverage,
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Servicios", item: `${siteUrl}/servicios/` },
-      { "@type": "ListItem", position: 3, name: title, item: `${siteUrl}${canonical}` },
-    ],
   },
   faq.length > 0
     ? {

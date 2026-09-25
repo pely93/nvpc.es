@@ -1,4 +1,6 @@
 ---
+import FAQ from "@/components/FAQ.astro";
+import { generalFaq } from "@/data/general-faq";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PrimaryButton from "@/components/PrimaryButton.astro";
 import WhatsAppButton from "@/components/WhatsAppButton.astro";
@@ -9,7 +11,7 @@ import ContactCTA from "@/components/ContactCTA.astro";
 import ClientLogos from "@/components/ClientLogos.astro";
 import ReviewCTA from "@/components/ReviewCTA.astro";
 import { business } from "@/data/business";
-import { siteUrl, withBase } from "@/config";
+import { withBase } from "@/config";
 
 const profiles = [
   "Oficinas y despachos",
@@ -27,23 +29,17 @@ const steps = [
   { title: "Implementamos y damos soporte", description: "Ponemos en marcha la solución y seguimos disponibles después." },
 ];
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "NVPC · Networking Virtual PC",
-  telephone: "+34667200016",
-  email: business.email,
-  url: siteUrl,
-  areaServed: business.coverage,
-  openingHours: "Mo-Fr 09:30-17:30",
-};
 ---
 
 <BaseLayout
   title="Soporte informático para empresas en Andalucía"
   description="Mantenimiento, redes y soluciones tecnológicas para que tu negocio trabaje sin interrupciones. Soporte remoto y presencial para empresas y profesionales."
   canonical="/"
-  jsonLd={jsonLd}
+  jsonLd={{
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: generalFaq.map(item => ({ "@type": "Question", name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer } })),
+  }}
 >
   <section class="relative overflow-hidden bg-surface">
     <img
@@ -163,4 +159,7 @@ const jsonLd = {
   </section>
 
   <ContactCTA />
+  <section class="container-nvpc interior-page">
+    <FAQ items={generalFaq} />
+  </section>
 </BaseLayout>

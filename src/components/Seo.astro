@@ -7,9 +7,10 @@ const seo = resolveSeo(Astro.props);
 ---
 
 <title>{seo.title}</title>
+<meta name="robots" content={seo.noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large"} />
 <meta name="description" content={seo.description} />
 {seo.canonical && <link rel="canonical" href={seo.canonical} />}
-{seo.noindex && <meta name="robots" content="noindex, nofollow" />}
+
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={siteName} />

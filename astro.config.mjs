@@ -1,3 +1,4 @@
+import { copyFile } from "node:fs/promises";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
@@ -24,7 +25,14 @@ function rewriteInternalMarkdownLinks() {
 export default defineConfig({
   site,
   base,
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap({
+    filter: (page) => !page.endsWith("/casos-de-exito/"),
+  }), {
+    name: "sitemap-standard-alias",
+    hooks: { "astro:build:done": async ({ dir }) => {
+      await copyFile(new URL("sitemap-index.xml", dir), new URL("sitemap.xml", dir));
+    } },
+  }],
   markdown: {
     remarkPlugins: [rewriteInternalMarkdownLinks],
   },
