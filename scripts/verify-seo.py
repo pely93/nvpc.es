@@ -29,6 +29,10 @@ pages=set()
 for file in root.rglob('*.html'):
     path='/' + file.relative_to(root).as_posix().removesuffix('index.html')
     if path=='/casos-de-exito/': continue
+    if path=='/404.html':
+        html=file.read_text()
+        if 'noindex, nofollow' not in html: errors.append('404 must be noindex')
+        continue
     page=Page(); page.feed(file.read_text()); expected=origin+path;pages.add(expected)
     if page.canonicals != [expected]: errors.append(f'{path}: canonical {page.canonicals}')
     if page.h1 != 1 or len(page.description)!=1 or not page.description[0]:errors.append(f'{path}: missing/duplicate metadata')

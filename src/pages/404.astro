@@ -1,0 +1,16 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PrimaryButton from "@/components/PrimaryButton.astro";
+---
+<BaseLayout title="Página no encontrada" description="Esta página no está disponible. Encuentra los servicios de NVPC o contacta con nosotros." canonical="/404.html" noindex>
+  <section class="container-nvpc interior-page">
+    <p class="text-sm text-ink-soft">Error 404</p>
+    <h1 class="mt-3 max-w-3xl text-3xl text-ink sm:text-4xl">No encontramos esta página</h1>
+    <p class="mt-4 max-w-2xl text-lg text-ink-soft">Puede que el enlace haya cambiado o que la dirección no sea correcta. Puedes volver al inicio, consultar nuestros servicios o contarnos qué necesitas.</p>
+    <div class="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+      <PrimaryButton href="/">Volver al inicio</PrimaryButton>
+      <PrimaryButton href="/servicios/" variant="outline">Ver servicios</PrimaryButton>
+      <PrimaryButton href="/contacto/" variant="outline">Contactar</PrimaryButton>
+    </div>
+  </section>
+</BaseLayout>

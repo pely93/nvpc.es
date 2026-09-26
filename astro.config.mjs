@@ -26,7 +26,7 @@ export default defineConfig({
   site,
   base,
   integrations: [tailwind(), sitemap({
-    filter: (page) => !page.endsWith("/casos-de-exito/"),
+    filter: (page) => !page.endsWith("/casos-de-exito/") && !/\/404(?:\.html|\/)?$/.test(page),
   }), {
     name: "sitemap-standard-alias",
     hooks: { "astro:build:done": async ({ dir }) => {

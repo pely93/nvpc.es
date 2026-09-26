@@ -1,4 +1,5 @@
 ---
+import logoSizes from "@/data/logo-sizes.json";
 import { clients, collaborators, brands } from "@/data/clients";
 import { withBase } from "@/config";
 type Props = { showBrands?: boolean };
@@ -15,10 +16,12 @@ const groups = [
   <ul class:list={["logo-grid", { "logo-grid--single": group.items.length === 1, "logo-grid--brands": group.title === "Marcas y soluciones" }]}>
    {group.items.map(client => {
     const Tag = client.href ? "a" : "div";
+    const imageStem = client.image.replace(/\.[^.]+$/, "");
+    const widths = logoSizes[imageStem as keyof typeof logoSizes];
     return <li class="min-w-0"><Tag href={client.href} target={client.href ? "_blank" : undefined} rel={client.href ? "noopener noreferrer" : undefined}
       aria-label={client.href ? `${client.name}: visitar web (se abre en otra pestaña)` : undefined}
       class={`logo-card flex h-full flex-col items-center rounded-sm border border-border bg-white p-3 text-center sm:p-5 ${client.href ? "transition-colors hover:border-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" : ""}`}>
-      <img src={withBase(`/logos/${client.image}`)} alt={client.name} width="300" height="150" loading="lazy" class="h-20 w-full object-contain sm:h-28" />
+      <img src={withBase(`/logos/optimized/${imageStem}-640.webp`)} srcset={widths[0] === widths[1] ? undefined : `${withBase(`/logos/optimized/${imageStem}-320.webp`)} ${widths[0]}w, ${withBase(`/logos/optimized/${imageStem}-640.webp`)} ${widths[1]}w`} sizes={group.items.length === 1 ? "128px" : group.title === "Marcas y soluciones" ? "(min-width: 1024px) 200px, (min-width: 640px) 30vw, 44vw" : "(min-width: 1280px) 360px, (min-width: 640px) 30vw, 44vw"} decoding="async" alt={client.name} width="300" height="150" loading="lazy" class="h-20 w-full object-contain sm:h-28" />
       <span class="mt-4 text-sm font-medium text-ink">{client.name}</span>
       {client.href && <span class="mt-auto pt-2 text-xs text-brand">Visitar web ↗</span>}
     </Tag></li>;
