@@ -7,19 +7,16 @@ type Props = {
   solution: string;
   benefit: string;
   href: string;
-  featured?: boolean;
 };
 
-const { title, problem, solution, benefit, href, featured = false } = Astro.props;
+const { title, problem, solution, benefit, href } = Astro.props;
 const resolvedHref = withBase(href);
 ---
 
 <article
-  class={`flex flex-col gap-4 border-t-2 border-border bg-paper p-6 ${
-    featured ? "sm:col-span-2 sm:p-8 border-t-brand" : ""
-  }`}
+  class="flex min-w-0 flex-col gap-4 border-t-2 border-border bg-paper px-0 py-5 sm:px-4"
 >
-  <h3 class={`font-heading ${featured ? "text-2xl" : "text-xl"} text-ink`}>
+  <h3 class="font-heading text-xl text-ink">
     <a href={resolvedHref} class="hover:text-brand">{title}</a>
   </h3>
   <dl class="grid gap-3 text-sm text-ink-soft">

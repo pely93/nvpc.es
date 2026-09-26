@@ -9,15 +9,15 @@ const groups = [
  ...(showBrands ? [{ title: "Marcas y soluciones", items: brands }] : []),
 ];
 ---
-<div class="space-y-12 py-12">
+<div class="logo-groups">
  {groups.map(group => <section>
   <h2 class="text-2xl text-ink">{group.title}</h2>
-  <ul class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+  <ul class:list={["logo-grid", { "logo-grid--single": group.items.length === 1, "logo-grid--brands": group.title === "Marcas y soluciones" }]}>
    {group.items.map(client => {
     const Tag = client.href ? "a" : "div";
     return <li class="min-w-0"><Tag href={client.href} target={client.href ? "_blank" : undefined} rel={client.href ? "noopener noreferrer" : undefined}
       aria-label={client.href ? `${client.name}: visitar web (se abre en otra pestaña)` : undefined}
-      class={`flex h-full flex-col items-center rounded-sm border border-border bg-white p-3 text-center sm:p-5 ${client.href ? "transition-colors hover:border-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" : ""}`}>
+      class={`logo-card flex h-full flex-col items-center rounded-sm border border-border bg-white p-3 text-center sm:p-5 ${client.href ? "transition-colors hover:border-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" : ""}`}>
       <img src={withBase(`/logos/${client.image}`)} alt={client.name} width="300" height="150" loading="lazy" class="h-20 w-full object-contain sm:h-28" />
       <span class="mt-4 text-sm font-medium text-ink">{client.name}</span>
       {client.href && <span class="mt-auto pt-2 text-xs text-brand">Visitar web ↗</span>}
